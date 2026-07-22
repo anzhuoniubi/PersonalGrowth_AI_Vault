@@ -21,14 +21,15 @@ def main():
             viewport={"width":1280,"height":800}, locale="zh-CN")
         pg = ctx.new_page()
 
-        # 监听下载事件
-        download_file = []
+        # 监听下载，记录所有下载
+        downloads = []  # 改为列表，记录每次下载
         def on_download(download):
             fname = os.path.join(DL, download.suggested_filename)
             download.save_as(fname)
-            download_file.append(fname)
-            print(f"[下载] ✅ {download.suggested_filename}")
+            downloads.append(fname)
+            print(f"[下载] #{len(downloads)} {download.suggested_filename}")
         pg.on("download", on_download)
+        dl_count_before = 0  # 追踪导出前的下载次数
 
         # ①② 打开+登录
         print("[1] 创作者中心")
@@ -113,35 +114,50 @@ def main():
         if not ok:
             print("[6] ❌ 未找到导出按钮"); pg.screenshot(path="/tmp/xhs_fail.png"); print("[6] 📸 /tmp/xhs_fail.png")
 
-        # ⑦ 确认弹窗
+        # ⑦ 确认弹窗/导出面板
         time.sleep(2)
+        dl_count_before = len(downloads)  # 记录点击导出前的下载计数
         confirm_ok = False
-        for t in ["确认", "确定", "导出", "下载"]:
+        for t in ["确认", "确定", "导出", "下载", "确认导出"]:
             try:
                 el = pg.get_by_text(t).first
-                if el.is_visible(timeout=2000): el.click(); print(f"[7] ✅ 点击了「{t}」"); confirm_ok = True; break
+                if el.is_visible(timeout=2000):
+                    el.click()
+                    print(f"[7] ✅ 点击了「{t}」")
+                    confirm_ok = True
+                    break
             except: pass
         if not confirm_ok:
             print("[7] 无确认弹窗（可能直接下载）")
 
-        # ⑧ 等下载
-        print("[8] ⏳ 等待下载...")
+        # ⑧ 等真正的下载（只取确认弹窗之后下载的文件，且验证是Excel）
+        print("[8] ⏳ 等待正式下载（跳过导出前的无效文件）...")
         for i in range(300):
             time.sleep(1)
-            # 先检查下载事件
-            if download_file:
-                f = download_file[0]
-                time.sleep(2)
-                print(f"[8] ✅ (事件) {os.path.basename(f)}"); ctx.close()
-                print(f"EXPORT_FILE:{f}"); return
-            # 再检查文件系统
+            # 只取确认后新下载的文件
+            new_downloads = downloads[dl_count_before:]
+            for f in new_downloads:
+                if os.path.exists(f):
+                    size = os.path.getsize(f)
+                    # 验证是真正的Excel（文件头: PK\x03\x04 表示xlsx）
+                    with open(f, "rb") as fh:
+                        header = fh.read(4)
+                    if header == b"PK\x03\x04":
+                        print(f"[8] ✅ 有效Excel {os.path.basename(f)} ({size}字节)")
+                        ctx.close()
+                        print(f"EXPORT_FILE:{f}"); return
+                    else:
+                        print(f"[8] ⚠️  跳过无效文件 {os.path.basename(f)} (非Excel格式, 文件头:{header.hex()})")
+            # 也扫描文件系统
             files = sorted(glob.glob(os.path.join(DL,"笔记列表明细表*.xlsx")),key=os.path.getmtime,reverse=True)
             if files:
                 f = files[0]
-                if os.path.getmtime(f) > start_time and os.path.getsize(f) > 1000:
-                    time.sleep(2)
-                    print(f"[8] ✅ (扫描) {os.path.basename(f)}"); ctx.close()
-                    print(f"EXPORT_FILE:{f}"); return
+                if os.path.getmtime(f) > start_time and os.path.getsize(f) > 3000:
+                    with open(f, "rb") as fh:
+                        header = fh.read(4)
+                    if header == b"PK\x03\x04":
+                        print(f"[8] ✅ (扫描) {os.path.basename(f)}"); ctx.close()
+                        print(f"EXPORT_FILE:{f}"); return
             if i==120: print(f"[8] ⏳ 2分钟了，还在等...")
         print("[8] ❌ 超时"); ctx.close(); sys.exit(1)
 
