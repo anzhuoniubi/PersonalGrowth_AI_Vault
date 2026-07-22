@@ -4,7 +4,8 @@
   "enabledCssSnippets": [
     "dashboard",
     "brand-colors",
-    "custom-callouts"
+    "custom-callouts",
+    "button-links"
   ],
   "interfaceFontFamily": "",
   "textFontFamily": "",
