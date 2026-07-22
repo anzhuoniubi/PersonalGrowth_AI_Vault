@@ -1,16 +1,16 @@
 # 研究流程工作流（半醒之间版）
 
 > 自动化用户研究与市场洞察流程
-> 对齐用户画像：[[02_用户研究/核心用户画像]]
-> 适用频率：每周执行1-2次
+> 对齐用户画像：[[02_用户研究/核心用户画像.md|核心用户画像]]
+> 适用频率：每周执行 1-2 次
 
 ---
 
 ```yaml
 name: 用户研究工作流（半醒之间版）
-trigger: 定时触发 / Creator指令
-频率: 每周2次
-预估耗时: 15-20分钟
+trigger: 定时触发 / Creator 指令
+频率: 每周 2 次
+预估耗时: 15-20 分钟
 ```
 
 ## 流程步骤
@@ -33,10 +33,10 @@ trigger: 定时触发 / Creator指令
 
 ### Phase 2: 分析洞察（10分钟）
 **执行Agent**: 研究Agent
-**调用Skill**:
-- skills/research/评论分析.md
-- skills/research/情绪分析.md
-- skills/research/用户痛点挖掘.md
+**调用 Skill**:
+- [[skills/research/评论分析.md|评论分析]]
+- [[skills/research/情绪分析.md|情绪分析]]
+- [[skills/research/用户痛点挖掘.md|用户痛点挖掘]]
 
 1. **评论深度分析**
    - 高频词提取
@@ -60,8 +60,8 @@ trigger: 定时触发 / Creator指令
    - 基于洞察生成选题建议
    - 转移到 03_选题库/
 
-3. **更新Memory**
-   - 如有必要，更新 [[memory/audience_memory.md]]
+3. **更新 Memory**
+   - 如有必要，更新 [[memory/audience_memory|audience_memory]]
 
 ## 产出物清单
 
@@ -79,11 +79,13 @@ trigger: 定时触发 / Creator指令
 - 关注的竞品账号更新
 
 ### 下游输出 → 
-- **选题Agent**：新选题建议
-- **内容Agent**：用户视角的创作输入
-- **CEO Agent**：市场洞察周报
-- 归档至 02_用户研究/
+- **[[agents/topic_agent.md|Topic Agent]]**：新选题建议
+- **[[agents/content_agent.md|Content Agent]]**：用户视角的创作输入
+- **[[agents/ceo_agent.md|CEO Agent]]**：市场洞察周报
+- 归档至 `02_用户研究/`
 
 ---
 
-*创建日期：2026-07-14*
+> **版本**：v1.1  
+> **最后更新**：2026-07-22  
+> **父文档**：[[CLAUDE.md]] · [[SYSTEM_ARCHITECTURE.md]]
