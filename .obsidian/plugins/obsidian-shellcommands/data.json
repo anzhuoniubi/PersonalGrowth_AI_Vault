@@ -228,11 +228,11 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "notification",
+          "handler": "modal",
           "convert_encoding": false
         },
         "stderr": {
-          "handler": "notification",
+          "handler": "modal",
           "convert_encoding": false
         }
       },
