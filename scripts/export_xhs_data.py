@@ -26,6 +26,12 @@ def wait_and_click(page, selectors, timeout=5000):
 
 
 def main():
+    # 清理上次残留的锁文件
+    for f in ["SingletonLock", "SingletonCookie", "SingletonSocket", "lockfile"]:
+        path = os.path.join(USER_DATA_DIR, f)
+        if os.path.exists(path):
+            os.remove(path)
+
     os.makedirs(USER_DATA_DIR, exist_ok=True)
     before = set(glob.glob(os.path.join(DOWNLOAD_DIR, "笔记列表明细表*.xlsx")))
 
