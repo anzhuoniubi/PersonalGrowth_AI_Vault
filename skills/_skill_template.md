@@ -95,4 +95,4 @@ Kimi 适配 7 原则（本模板适用）：
 
 > **版本**：v{M.N}  
 > **最后更新**：{YYYY-MM-DD}  
-> **所属 Agent**：[[agents/{Agent名}.md|{中文名} Agent]]
+> **所属 Agent**：`{中文名} Agent`（对应文件 `agents/{Agent名}.md`）

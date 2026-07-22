@@ -128,9 +128,9 @@ theme: {sketch/default/botanical}
 mode: {auto-split/separator}
 
 == 渲染图片 ==
-![[cover.png]]
-![[card_1.png]]
-![[card_2.png]]
+`cover.png`（占位，渲染后替换为图片嵌入）
+`card_1.png`（占位）
+`card_2.png`（占位）
 ```
 
 ## 关键指标

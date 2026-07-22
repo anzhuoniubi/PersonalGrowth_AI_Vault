@@ -154,10 +154,10 @@ Creator（我 - 真人创作者）
 
 | 记忆文件 | 记录内容 | 更新频率 |
 |----------|----------|----------|
-| [[memory/brand_memory\|brand_memory]] | 品牌定位、核心世界观、三层内容体系、价值观 | 每月回顾 |
-| [[memory/audience_memory\|audience_memory]] | 核心用户画像、痛点、行为习惯、数据验证规律 | 每月 |
-| [[memory/knowledge_memory\|knowledge_memory]] | 核心定位知识、个人成长理论、内容创作知识 | 每周新增 |
-| [[memory/content_style\|content_style]] | 写作风格、标题公式、三层语气差异、编辑节奏 | 每次创作前参考 |
+| [[memory/brand_memory|brand_memory]] | 品牌定位、核心世界观、三层内容体系、价值观 | 每月回顾 |
+| [[memory/audience_memory|audience_memory]] | 核心用户画像、痛点、行为习惯、数据验证规律 | 每月 |
+| [[memory/knowledge_memory|knowledge_memory]] | 核心定位知识、个人成长理论、内容创作知识 | 每周新增 |
+| [[memory/content_style|content_style]] | 写作风格、标题公式、三层语气差异、编辑节奏 | 每次创作前参考 |
 
 ---
 

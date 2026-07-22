@@ -43,8 +43,8 @@ Kimi 适配 7 原则（本模板适用）：
 
 ## Skills
 
-- [[skills/{分类}/{Skill名}.md|{Skill名}]] — {用途}
-- [[skills/{分类}/{Skill名}.md|{Skill名}]] — {用途}
+- `{Skill名}` — 对应文件 `skills/{分类}/{Skill名}.md`，用途：{用途}
+- `{Skill名}` — 对应文件 `skills/{分类}/{Skill名}.md`，用途：{用途}
 
 ## Tools
 
@@ -53,10 +53,10 @@ Kimi 适配 7 原则（本模板适用）：
 
 ## Memory
 
-- [[memory/brand_memory.md|brand_memory]] — 品牌定位与语言调性
-- [[memory/audience_memory.md|audience_memory]] — 用户画像与痛点
-- [[memory/content_style.md|content_style]] — 内容风格与三层语气
-- [[memory/knowledge_memory.md|knowledge_memory]] — 知识资产与概念库
+- [[memory/brand_memory|brand_memory]] — 品牌定位与语言调性
+- [[memory/audience_memory|audience_memory]] — 用户画像与痛点
+- [[memory/content_style|content_style]] — 内容风格与三层语气
+- [[memory/knowledge_memory|knowledge_memory]] — 知识资产与概念库
 
 ## 输出格式
 
