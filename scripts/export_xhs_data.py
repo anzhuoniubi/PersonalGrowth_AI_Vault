@@ -51,21 +51,23 @@ def main():
         else:
             print("[2] ✅ 已登录")
 
-        # ③ 先看页面上有什么（调试）
-        print("[3] 🔍 扫描页面可点击元素...")
+        # ③ 扫描页面元素（保存到文件，不受stdout截断影响）
+        print("[3] 🔍 扫描页面可点击元素 → /tmp/xhs_elements.txt")
         try:
             items = pg.evaluate("""() => {
                 const found = [];
-                document.querySelectorAll('a, button, span, div[class*="nav"], div[class*="menu"], li').forEach(el => {
-                    const text = el.textContent.trim().slice(0,40);
-                    if (text && text.length < 30) {
-                        found.push({tag: el.tagName, text: text, class: (el.className||'').slice(0,50)});
+                document.querySelectorAll('a, button, span, div, li, [role="button"], [class*="btn"]').forEach(el => {
+                    const text = (el.textContent || '').trim().slice(0,40);
+                    if (text && text.length < 30 && text.length > 1) {
+                        found.push(text);
                     }
                 });
-                return [...new Map(found.map(f => [f.text, f])).values()].slice(0,30);
+                return [...new Set(found)].sort();
             }""")
-            for item in items:
-                print(f"   [{item['tag']}] {item['text']}")
+            with open("/tmp/xhs_elements.txt", "w") as f:
+                for t in items:
+                    f.write(t + "\n")
+            print(f"   找到 {len(items)} 个可点击文本")
         except Exception as e:
             print(f"   扫描失败: {e}")
 
@@ -87,15 +89,17 @@ def main():
         if not tab:
             step(pg, 5, "点击「内容数据」",
                  lambda: pg.locator("text=内容数据").first.click(timeout=3000))
-        time.sleep(3)
+        time.sleep(5)  # 等笔记数据页面加载完
 
         # ⑥ 点击「导出」
-        for label in ["导出数据", "导出", "下载明细"]:
+        for label in ["导出数据", "导出", "下载明细", "下载", "下载数据", "数据导出", "报表导出"]:
             if step(pg, 6, f"点击「{label}」",
                     lambda: pg.get_by_text(label).first.click(timeout=4000)):
                 break
         else:
             print("[6] ⚠️ 请手动点击导出按钮")
+            pg.screenshot(path="/tmp/xhs_export_page.png")
+            print("[6] 📸 截图: /tmp/xhs_export_page.png")
 
         # ⑦ 确认弹窗
         time.sleep(2)
