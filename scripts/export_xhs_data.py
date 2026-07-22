@@ -21,6 +21,15 @@ def main():
             viewport={"width":1280,"height":800}, locale="zh-CN")
         pg = ctx.new_page()
 
+        # 监听下载事件
+        download_file = []
+        def on_download(download):
+            fname = os.path.join(DL, download.suggested_filename)
+            download.save_as(fname)
+            download_file.append(fname)
+            print(f"[下载] ✅ {download.suggested_filename}")
+        pg.on("download", on_download)
+
         # ①② 打开+登录
         print("[1] 创作者中心")
         pg.goto("https://creator.xiaohongshu.com/", timeout=30000)
@@ -106,22 +115,32 @@ def main():
 
         # ⑦ 确认弹窗
         time.sleep(2)
-        for t in ["确认","确定"]:
+        confirm_ok = False
+        for t in ["确认", "确定", "导出", "下载"]:
             try:
                 el = pg.get_by_text(t).first
-                if el.is_visible(timeout=2000): el.click(); print("[7] ✅ 确认"); break
+                if el.is_visible(timeout=2000): el.click(); print(f"[7] ✅ 点击了「{t}」"); confirm_ok = True; break
             except: pass
+        if not confirm_ok:
+            print("[7] 无确认弹窗（可能直接下载）")
 
-        # ⑧ 等下载（按文件修改时间）
+        # ⑧ 等下载
         print("[8] ⏳ 等待下载...")
         for i in range(300):
             time.sleep(1)
+            # 先检查下载事件
+            if download_file:
+                f = download_file[0]
+                time.sleep(2)
+                print(f"[8] ✅ (事件) {os.path.basename(f)}"); ctx.close()
+                print(f"EXPORT_FILE:{f}"); return
+            # 再检查文件系统
             files = sorted(glob.glob(os.path.join(DL,"笔记列表明细表*.xlsx")),key=os.path.getmtime,reverse=True)
             if files:
                 f = files[0]
                 if os.path.getmtime(f) > start_time and os.path.getsize(f) > 1000:
                     time.sleep(2)
-                    print(f"[8] ✅ {os.path.basename(f)}"); ctx.close()
+                    print(f"[8] ✅ (扫描) {os.path.basename(f)}"); ctx.close()
                     print(f"EXPORT_FILE:{f}"); return
             if i==120: print(f"[8] ⏳ 2分钟了，还在等...")
         print("[8] ❌ 超时"); ctx.close(); sys.exit(1)
