@@ -216,7 +216,7 @@
     {
       "id": "cmd-weekly-review",
       "platform_specific_commands": {
-        "default": "python3 \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/scripts/weekly_review.py\" && open \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/08_数据复盘/数据看板.md\" -a Obsidian"
+        "default": "bash \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/scripts/weekly_review.sh\""
       },
       "shells": {},
       "alias": "cc:weekly-review",

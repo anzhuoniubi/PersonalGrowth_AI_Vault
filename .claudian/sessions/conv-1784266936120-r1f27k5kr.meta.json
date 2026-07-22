@@ -4,8 +4,8 @@
   "title": "Evaluate 复利 as content topic",
   "titleGenerationStatus": "success",
   "createdAt": 1784266936121,
-  "updatedAt": 1784708545535,
-  "lastResponseAt": 1784708545535,
+  "updatedAt": 1784710508936,
+  "lastResponseAt": 1784710508935,
   "sessionId": "338fc9ea-a10d-48d4-9433-e707b7fc73f8",
   "selectedModel": "sonnet",
   "providerState": {
@@ -267,12 +267,12 @@
   },
   "usage": {
     "model": "sonnet",
-    "inputTokens": 429,
+    "inputTokens": 13391,
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 211328,
+    "cacheReadInputTokens": 283648,
     "contextWindow": 1000000,
     "contextWindowIsAuthoritative": true,
-    "contextTokens": 211757,
-    "percentage": 21
+    "contextTokens": 297039,
+    "percentage": 30
   }
 }
