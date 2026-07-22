@@ -24,12 +24,12 @@
   "max_visible_lines_in_shell_command_fields": false,
   "shell_commands": [
     {
-      "id": "3nrlejg7ic",
+      "id": "cmd-git-push",
       "platform_specific_commands": {
-        "default": "Alias: cc:git-push\nShell command:\n  cd \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault\" && git add -A && git commit -m \"auto: $(date +%Y-%m-%d_%H:%M)\" && git push origin main\nPlatform: macOS (default)\nConfirm before execution: ✅\nOutput channel: Notification"
+        "default": "cd \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault\" && git add -A && git commit -m \"auto: $(date +%Y-%m-%d_%H:%M)\" && git push origin main"
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:git-push",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -38,14 +38,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "notification",
+          "convert_encoding": false
         },
         "stderr": {
           "handler": "notification",
-          "convert_ansi_code": true
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -53,19 +56,18 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "rbl8ngkp8d",
+      "id": "cmd-import-data",
       "platform_specific_commands": {
-        "default": "Alias: cc:import-data\nShell command:\n  python3 -c \"\nimport openpyxl, glob, os\nfiles = sorted(glob.glob('/Users/mac/Downloads/笔记列表明细表*.xlsx'), key=os.path.getmtime, reverse=True)\nif files:\n    wb = openpyxl.load_workbook(files[0], data_only=True)\n    ws = wb[wb.sheetnames[0]]\n    rows = list(ws.iter_rows(values_only=True))\n    for i, r in enumerate(rows[2:8] if len(rows) > 2 else []):\n        print(f'{r[0]} | 曝光:{r[3]} | 观看:{r[4]} | CTR:{r[5]} | 互动:{int(r[6] or 0)+int(r[7] or 0)+int(r[8] or 0)+int(r[10] or 0)}')\n    print(f'Done: {os.path.basename(files[0])}')\nelse:\n    print('No data file found')\n\"\nPlatform: macOS (default)\nOutput channel: Modal"
+        "default": "python3 -c \"\nimport openpyxl, glob, os\nfiles = sorted(glob.glob('/Users/mac/Downloads/笔记列表明细表*.xlsx'), key=os.path.getmtime, reverse=True)\nif files:\n    wb = openpyxl.load_workbook(files[0], data_only=True)\n    ws = wb[wb.sheetnames[0]]\n    rows = list(ws.iter_rows(values_only=True))\n    for i, r in enumerate(rows[2:8] if len(rows) > 2 else []):\n        title = str(r[0])[:30] if r[0] else ''\n        likes = r[6] or 0\n        comments = r[7] or 0\n        saves = r[8] or 0\n        shares = r[10] or 0\n        interaction = int(likes)+int(comments)+int(saves)+int(shares)\n        print(f'{title} | 曝光:{r[3]} | CTR:{r[5]} | 互动:{interaction}')\n    print(f'Done: {os.path.basename(files[0])}')\nelse:\n    print('No data file found')\n\""
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:import-data",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -74,14 +76,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "modal",
+          "convert_encoding": false
         },
         "stderr": {
-          "handler": "notification",
-          "convert_ansi_code": true
+          "handler": "modal",
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -89,19 +94,18 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "gx8wp1c6n3",
+      "id": "cmd-mcp-health",
       "platform_specific_commands": {
-        "default": "Alias: cc:mcp-health\nShell command:\n  echo \"=== MCP Health Check ===\" &&\n  echo \"Sequential Thinking: $(node -e 'require(\\\"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js\\\")' 2>&1 | head -1 || echo 'ERROR')\" &&\n  echo \"Playwright: $(npx playwright --version 2>&1)\" &&\n  echo \"Filesystem: $(node -e 'require(\\\"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js\\\")' 2>&1 | head -1 || echo 'ERROR')\" &&\n  echo \"GitHub: $(gh auth status 2>&1 | head -1)\" &&\n  echo \"Memory: $(ls -la /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/memory/mcp_knowledge_graph.json 2>&1 || echo 'Not yet created')\" &&\n  echo \"=== Check Complete ===\"\nPlatform: macOS (default)\nOutput channel: Modal"
+        "default": "echo \"=== MCP Health Check ===\" && echo \"Sequential Thinking: $(node -e 'require(\\\"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js\\\")' 2>&1 | head -1 || echo 'ERROR')\" && echo \"Playwright: $(npx playwright --version 2>&1)\" && echo \"GitHub: $(gh auth status 2>&1 | head -1)\" && echo \"Memory: $(ls -la /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/memory/mcp_knowledge_graph.json 2>&1 || echo 'Not yet created')\" && echo \"=== Check Complete ===\""
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:mcp-health",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -110,14 +114,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "modal",
+          "convert_encoding": false
         },
         "stderr": {
-          "handler": "notification",
-          "convert_ansi_code": true
+          "handler": "modal",
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -125,19 +132,18 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "5g0316xbeh",
+      "id": "cmd-render-cover",
       "platform_specific_commands": {
-        "default": "Alias: cc:render-cover\nShell command:\n  cd \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/redbook-auto\" && python3 scripts/render_xhs_v2.py\nPlatform: macOS (default)\nOutput channel: Notification"
+        "default": "cd \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/redbook-auto\" && python3 scripts/render_xhs_v2.py"
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:render-cover",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -146,14 +152,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "notification",
+          "convert_encoding": false
         },
         "stderr": {
           "handler": "notification",
-          "convert_ansi_code": true
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -161,19 +170,18 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "pbtjdx7x5j",
+      "id": "cmd-content-production",
       "platform_specific_commands": {
-        "default": "Alias: cc:content-production\nShell command:\n  osascript -e 'display notification \"内容生产流程已启动\" with title \"半醒之间 OS\"'\nPlatform: macOS (default)\nOutput channel: Notification"
+        "default": "open \"obsidian://open?vault=PersonalGrowth_AI_Vault&file=03_选题库%2F选题仪表盘\" && osascript -e 'display notification \"选题仪表盘已打开\" with title \"半醒之间 OS\"'"
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:content-production",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -182,14 +190,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "notification",
+          "convert_encoding": false
         },
         "stderr": {
           "handler": "notification",
-          "convert_ansi_code": true
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -197,19 +208,18 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "quqh8r9e8g",
+      "id": "cmd-weekly-review",
       "platform_specific_commands": {
-        "default": "Alias: cc:weekly-review\nShell command:\n  osascript -e 'display notification \"周度复盘已启动，请切换到 Claude Code\" with title \"半醒之间 OS\"'\nPlatform: macOS (default)\nOutput channel: Notification"
+        "default": "python3 -c \"\nimport openpyxl, glob, os\nfiles = sorted(glob.glob('/Users/mac/Downloads/笔记列表明细表*.xlsx'), key=os.path.getmtime, reverse=True)\nif files:\n    wb = openpyxl.load_workbook(files[0], data_only=True)\n    ws = wb[wb.sheetnames[0]]\n    rows = list(ws.iter_rows(values_only=True))\n    total_exp = 0; total_interaction = 0; total_views = 0\n    print('📊 周度数据速报')\n    print('=' * 40)\n    for r in rows[2:]:\n        if r[0] and int(r[3] or 0) > 0:\n            title = str(r[0])[:25]\n            exp = int(r[3] or 0); views = int(r[4] or 0)\n            likes = int(r[6] or 0); comments = int(r[7] or 0)\n            saves = int(r[8] or 0); shares = int(r[10] or 0)\n            ctr = float(r[5] or 0)\n            interaction = likes + comments + saves + shares\n            rate = round(interaction / max(views, 1) * 100, 1)\n            flag = '🔥' if exp > 10000 else ('✅' if exp > 1000 else '⚡')\n            print(f'{flag} {title} | 曝光:{exp} | CTR:{ctr} | 互动:{interaction}')\n            total_exp += exp; total_interaction += interaction; total_views += views\n    print('=' * 40)\n    print(f'总计: {len([r for r in rows[2:] if r[0] and int(r[3] or 0) > 0])}篇 | 曝光:{total_exp} | 互动:{total_interaction}')\n    print(f'数据源: {os.path.basename(files[0])}')\nelse:\n    print('未找到数据文件')\n\" && open \"obsidian://open?vault=PersonalGrowth_AI_Vault&file=08_数据复盘%2F数据看板\""
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:weekly-review",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -218,14 +228,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "notification",
+          "convert_encoding": false
         },
         "stderr": {
           "handler": "notification",
-          "convert_ansi_code": true
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -233,19 +246,18 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "9dhevdrim9",
+      "id": "cmd-user-research",
       "platform_specific_commands": {
-        "default": "Alias: cc:user-research\nShell command:\n  osascript -e 'display notification \"用户研究已启动\" with title \"半醒之间 OS\"'\nPlatform: macOS (default)\nOutput channel: Notification"
+        "default": "open \"obsidian://open?vault=PersonalGrowth_AI_Vault&file=02_用户研究%2F核心用户画像\" && open \"obsidian://open?vault=PersonalGrowth_AI_Vault&file=skills%2Fresearch%2F用户需求建模\""
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:user-research",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -254,14 +266,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "notification",
+          "convert_encoding": false
         },
         "stderr": {
           "handler": "notification",
-          "convert_ansi_code": true
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -269,19 +284,18 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "ik7gejssh1",
+      "id": "cmd-viral-analysis",
       "platform_specific_commands": {
-        "default": "Alias: cc:viral-analysis\nShell command:\n  osascript -e 'display notification \"爆款拆解已启动\" with title \"半醒之间 OS\"'\nPlatform: macOS (default)\nOutput channel: Notification"
+        "default": "open \"obsidian://open?vault=PersonalGrowth_AI_Vault&file=04_爆款拆解库%2F爆款模型_01_活人感真实叙事\" && open \"obsidian://open?vault=PersonalGrowth_AI_Vault&file=skills%2Fdata%2F爆款拆解\""
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:viral-analysis",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -290,14 +304,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "notification",
+          "convert_encoding": false
         },
         "stderr": {
           "handler": "notification",
-          "convert_ansi_code": true
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -305,35 +322,37 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "4xo39g90ns",
+      "id": "cmd-mcp-restart-memory",
       "platform_specific_commands": {
-        "default": "Alias: cc:mcp-restart-memory\nShell command:\n  rm -f \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/memory/mcp_knowledge_graph.json\" && echo \"Memory graph cleared. Restart Claude Code to reinitialize.\" && osascript -e 'display notification \"Memory已重置\" with title \"MCP控制台\"'\nPlatform: macOS (default)\nOutput channel: Notification"
+        "default": "rm -f \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/memory/mcp_knowledge_graph.json\" && osascript -e 'display notification \"Memory已重置，重启Claude Code以重新初始化\" with title \"MCP控制台\"'"
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:mcp-restart-memory",
       "icon": null,
-      "confirm_execution": false,
+      "confirm_execution": true,
       "ignore_error_codes": [],
       "input_contents": {
         "stdin": null
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "notification",
+          "convert_encoding": false
         },
         "stderr": {
           "handler": "notification",
-          "convert_ansi_code": true
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -341,35 +360,37 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "xcwkbhe15f",
+      "id": "cmd-mcp-clean-memory",
       "platform_specific_commands": {
-        "default": "Alias: cc:mcp-clean-memory\nShell command:\n  rm -f \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/memory/mcp_knowledge_graph.json\" && echo \"Cleaned.\" && osascript -e 'display notification \"Memory图谱已清理\" with title \"MCP控制台\"'\nPlatform: macOS (default)\nOutput channel: Notification"
+        "default": "rm -f \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/memory/mcp_knowledge_graph.json\" && echo \"Memory图谱已清理\" && osascript -e 'display notification \"Memory图谱已清理\" with title \"MCP控制台\"'"
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:mcp-clean-memory",
       "icon": null,
-      "confirm_execution": false,
+      "confirm_execution": true,
       "ignore_error_codes": [],
       "input_contents": {
         "stdin": null
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "notification",
+          "convert_encoding": false
         },
         "stderr": {
           "handler": "notification",
-          "convert_ansi_code": true
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -377,19 +398,18 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
     },
     {
-      "id": "vjaohmeu74",
+      "id": "cmd-playwright-test",
       "platform_specific_commands": {
-        "default": "Alias: cc:mcp-playwright-test\nShell command:\n  cd \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault\" && node -e \"\nconst { chromium } = require('playwright');\n(async () => {\n  const browser = await chromium.launch({ headless: true });\n  const page = await browser.newPage();\n  await page.goto('https://www.xiaohongshu.com');\n  console.log('Title:', await page.title());\n  await browser.close();\n  console.log('Playwright test passed.');\n})();\n\"\nPlatform: macOS (default)\nOutput channel: Modal\nConfirm before execution: ✅"
+        "default": "cd \"/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault\" && node -e \"const { chromium } = require('playwright'); (async () => { const browser = await chromium.launch({ headless: true }); const page = await browser.newPage(); await page.goto('https://www.xiaohongshu.com'); console.log('Title:', await page.title()); await browser.close(); console.log('Playwright test: OK'); })();\""
       },
       "shells": {},
-      "alias": "",
+      "alias": "cc:mcp-playwright-test",
       "icon": null,
       "confirm_execution": false,
       "ignore_error_codes": [],
@@ -398,14 +418,17 @@
       },
       "output_handlers": {
         "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
+          "handler": "modal",
+          "convert_encoding": false
         },
         "stderr": {
-          "handler": "notification",
-          "convert_ansi_code": true
+          "handler": "modal",
+          "convert_encoding": false
         }
       },
+      "events": {},
+      "enable_autocomplete_menu": true,
+      "preview": false,
       "output_wrappers": {
         "stdout": null,
         "stderr": null
@@ -413,7 +436,6 @@
       "output_channel_order": "stdout-first",
       "output_handling_mode": "buffered",
       "execution_notification_mode": null,
-      "events": {},
       "debounce": null,
       "command_palette_availability": "enabled",
       "preactions": [],

@@ -6,10 +6,9 @@
 
 ## 一、注册方法
 
-1. 打开 Obsidian 设置 → **Shell Commands**（左侧栏）
-2. 点击 **New shell command**
-3. 填入命令配置（见下方各命令模板）
-4. 保存后按钮即可触发
+> ⚠️ 命令已通过 `data.json` 预配置，**无需手动注册**。重启Obsidian后 `Cmd+P` 输入 `cc:` 即可看到全部命令。
+>
+> 如需修改，进入 **设置 → Shell Commands**，找到对应命令编辑。
 
 ---
 

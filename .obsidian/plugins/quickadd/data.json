@@ -28,6 +28,9 @@
       "format": {
         "displayFormat": "✍️ {{DATE}} | {{NAME}}",
         "folder": "05_内容生产库"
+      },
+      "fileExistsBehavior": {
+        "kind": "prompt"
       }
     }
   ],
@@ -120,6 +123,8 @@
     "migrateFileOpeningSettings": true,
     "backfillFileOpeningDefaults": true,
     "setProviderModelDiscoveryMode": true,
-    "migrateProviderApiKeysToSecretStorage": true
-  }
+    "migrateProviderApiKeysToSecretStorage": true,
+    "consolidateFileExistsBehavior": true
+  },
+  "macros": []
 }
