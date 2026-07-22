@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""小红书数据自动导出 —— 打开浏览器等下载，自动检测完成"""
+"""小红书数据导出 —— 打开浏览器等下载，自动检测"""
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -15,7 +15,11 @@ def main():
     os.makedirs(USER_DATA_DIR, exist_ok=True)
     before = set(glob.glob(os.path.join(DOWNLOAD_DIR, "笔记列表明细表*.xlsx")))
 
-    print("🚀 打开创作者中心...")
+    print("🚀 打开小红书创作者中心...")
+    print("🔗 https://creator.xiaohongshu.com/")
+    print("👉 请自行导航到「数据中心」→「笔记数据」→ 点「导出」")
+    print("⏳ 浏览器保持打开，检测到 Excel 文件后自动关闭...")
+
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
             USER_DATA_DIR,
@@ -26,45 +30,22 @@ def main():
         )
         page = context.new_page()
         page.goto("https://creator.xiaohongshu.com/", timeout=30000)
-        time.sleep(3)
+        page.bring_to_front()
 
-        # 尝试自动导航到数据中心
-        try:
-            page.goto("https://creator.xiaohongshu.com/creator/analytics/content",
-                     timeout=10000)
-            time.sleep(2)
-        except:
-            pass
-
-        # 尝试自动点击导出
-        for sel in ["text=导出数据", "text=下载明细", "button:has-text('导出')"]:
-            try:
-                el = page.locator(sel).first
-                if el.is_visible(timeout=2000):
-                    el.click()
-                    print(f"✅ 已点击导出")
-                    break
-            except:
-                pass
-
-        print("⏳ 等待 Excel 下载（请在浏览器中手动操作导出）...")
-        print("   浏览器保持打开，检测到新文件后自动继续...")
-
-        # 等待下载完成 —— 最长等待 3 分钟
-        for i in range(180):
+        # 等下载 —— 最长 5 分钟
+        for _ in range(300):
             time.sleep(1)
             after = set(glob.glob(os.path.join(DOWNLOAD_DIR, "笔记列表明细表*.xlsx")))
             new = after - before
             if new:
-                # 等文件大小稳定
-                time.sleep(3)
+                time.sleep(2)  # 等写入完成
                 f = sorted(new, key=os.path.getmtime, reverse=True)[0]
-                print(f"✅ 已检测到: {os.path.basename(f)}")
+                print(f"✅ {os.path.basename(f)}")
                 context.close()
                 print(f"EXPORT_FILE:{f}")
                 return
 
-        print("⚠️  超时，请手动下载后重新点击复盘按钮")
+        print("⚠️  超时")
         context.close()
 
 
