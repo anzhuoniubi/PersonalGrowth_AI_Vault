@@ -1,0 +1,25 @@
+{
+  "id": "conv-1784466384880-d9cn0cb4q",
+  "providerId": "claude",
+  "title": "Analyze ripple-arrow metaphor",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784466384880,
+  "updatedAt": 1784532297815,
+  "lastResponseAt": 1784470476167,
+  "sessionId": "64bc447b-7f28-4b71-be5a-b53d3022bd11",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "64bc447b-7f28-4b71-be5a-b53d3022bd11"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 2835,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 54144,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 56979,
+    "percentage": 28
+  }
+}

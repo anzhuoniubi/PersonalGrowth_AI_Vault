@@ -1,0 +1,17 @@
+# Obsidian workspace & sync
+.obsidian/workspace*
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+
+# macOS
+.DS_Store
+
+# Obsidian trash
+.trash/
+
+# Render outputs (regenerable)
+render/
+
+# Local Claude settings
+.claude/settings.local.json

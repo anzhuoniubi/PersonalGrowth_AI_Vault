@@ -1,0 +1,45 @@
+{
+  "project": {
+    "name": "Personal Growth AI Self Media OS",
+    "description": "面向小红书个人成长领域的一人AI自媒体系统",
+    "version": "2.0"
+  },
+  "agent": {
+    "defaultModel": "sonnet",
+    "tools": ["Read", "Write", "Edit", "Bash", "WebSearch", "WebFetch"]
+  },
+  "workflows": {
+    "content-production": {
+      "description": "执行完整内容生产流程：研究→选题→创作→视觉→归档",
+      "steps": [
+        "research_agent.md",
+        "topic_agent.md",
+        "content_agent.md",
+        "visual_agent.md",
+        "knowledge_base_agent.md"
+      ]
+    },
+    "weekly-review": {
+      "description": "执行周度数据复盘流程",
+      "steps": [
+        "review_agent.md",
+        "data_analysis_skill"
+      ]
+    },
+    "user-research": {
+      "description": "执行用户研究流程",
+      "steps": [
+        "research_agent.md",
+        "comment_analysis_skill"
+      ]
+    }
+  },
+  "memory": {
+    "autoUpdatePaths": [
+      "memory/brand_memory.md",
+      "memory/audience_memory.md",
+      "memory/knowledge_memory.md",
+      "memory/content_style.md"
+    ]
+  }
+}

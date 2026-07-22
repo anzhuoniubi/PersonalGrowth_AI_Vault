@@ -1,0 +1,297 @@
+{
+  "taxonomy_version": 1,
+  "carrier": [
+    "real_photo_diary",
+    "photo_annotation",
+    "screenshot_markup",
+    "chat_dramatization",
+    "text_card",
+    "checklist_steps",
+    "comparison_warning",
+    "collage_journal",
+    "single_image_reminder",
+    "unknown",
+    "other"
+  ],
+  "slide_role": [
+    "cover",
+    "scene",
+    "context",
+    "evidence",
+    "comparison",
+    "step",
+    "boundary",
+    "transition",
+    "summary",
+    "cta",
+    "other"
+  ],
+  "composition": [
+    "single_focus",
+    "split",
+    "grid",
+    "layered_collage",
+    "full_bleed",
+    "interface_capture",
+    "unknown",
+    "other"
+  ],
+  "dominant_material": [
+    "real_photo",
+    "screenshot",
+    "chat_ui",
+    "paper_note",
+    "illustration",
+    "type_only",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "background_type": [
+    "photo",
+    "paper",
+    "screenshot",
+    "solid",
+    "texture",
+    "interface",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "subject_presence": [
+    "person",
+    "hand",
+    "object",
+    "environment",
+    "interface_only",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "layout_structure": [
+    "freeform",
+    "stacked",
+    "split",
+    "grid",
+    "full_bleed_overlay",
+    "chat_flow",
+    "list",
+    "unknown",
+    "other"
+  ],
+  "text_density": [
+    "sparse",
+    "medium",
+    "dense",
+    "variable",
+    "unknown"
+  ],
+  "hierarchy_levels": [
+    "one",
+    "two",
+    "three_plus",
+    "variable",
+    "unknown"
+  ],
+  "alignment": [
+    "left",
+    "center",
+    "right",
+    "mixed",
+    "organic",
+    "unknown",
+    "other"
+  ],
+  "spacing_pattern": [
+    "tight",
+    "even",
+    "variable",
+    "edge_to_edge",
+    "unknown",
+    "other"
+  ],
+  "font_feel": [
+    "system",
+    "editorial",
+    "handwritten",
+    "display",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "decoration_types": [
+    "none",
+    "sticker",
+    "tape",
+    "doodle",
+    "shape",
+    "emoji",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "annotation_style": [
+    "none",
+    "circle",
+    "arrow",
+    "underline",
+    "highlight",
+    "handwritten",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "imperfection_signals": [
+    "none",
+    "uneven_crop",
+    "off_grid",
+    "natural_shadow",
+    "hand_mark",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "image_text_relationship": [
+    "image_leads",
+    "text_leads",
+    "complementary",
+    "redundant",
+    "unknown",
+    "other"
+  ],
+  "text_surface": [
+    "title",
+    "cover",
+    "slide",
+    "caption",
+    "cta",
+    "unknown",
+    "other"
+  ],
+  "point_of_view": [
+    "first_person",
+    "second_person",
+    "third_person",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "audience_address": [
+    "direct",
+    "collective",
+    "implicit",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "register": [
+    "spoken",
+    "plain_explanatory",
+    "professional",
+    "diary",
+    "playful",
+    "sales",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "sentence_length_pattern": [
+    "short",
+    "medium",
+    "long",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "line_break_pattern": [
+    "sentence",
+    "phrase",
+    "dense_paragraph",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "punctuation_pattern": [
+    "light",
+    "standard",
+    "expressive",
+    "fragmented",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "emoji_pattern": [
+    "none",
+    "sparse",
+    "structural",
+    "dense",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "hook_move": [
+    "name_scene",
+    "state_conflict",
+    "give_answer",
+    "show_evidence",
+    "ask_question",
+    "unknown",
+    "other"
+  ],
+  "narrative_moves": [
+    "setup",
+    "turn",
+    "contrast",
+    "reveal",
+    "reflection",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "evidence_move": [
+    "show_process",
+    "show_example",
+    "compare",
+    "cite_source",
+    "state_limit",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "payoff_move": [
+    "answer",
+    "framework",
+    "script",
+    "decision",
+    "boundary",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "cta_move": [
+    "none",
+    "question",
+    "save",
+    "follow",
+    "native_action",
+    "commercial",
+    "unknown",
+    "other"
+  ],
+  "image_caption_division": [
+    "image_core_caption_context",
+    "image_summary_caption_detail",
+    "image_evidence_caption_interpretation",
+    "redundant",
+    "unknown",
+    "other"
+  ],
+  "rule_type": [
+    "cover",
+    "rhythm",
+    "visual",
+    "copy",
+    "material",
+    "anti_pattern"
+  ]
+}

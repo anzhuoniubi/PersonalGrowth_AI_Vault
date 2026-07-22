@@ -1,0 +1,25 @@
+{
+  "id": "conv-1784391917972-2daohtunp",
+  "providerId": "claude",
+  "title": "解析伤害背后的故意与选择",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784391917972,
+  "updatedAt": 1784466325673,
+  "lastResponseAt": 1784397556061,
+  "sessionId": "f1034d3b-0c88-42cb-b782-f3c0571784c1",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "f1034d3b-0c88-42cb-b782-f3c0571784c1"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 123,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 94208,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 94331,
+    "percentage": 47
+  }
+}

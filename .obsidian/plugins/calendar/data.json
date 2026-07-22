@@ -1,0 +1,14 @@
+{
+  "shouldConfirmBeforeCreate": true,
+  "weekStart": "locale",
+  "wordsPerDot": 250,
+  "showWeeklyNote": false,
+  "weeklyNoteFormat": "",
+  "weeklyNoteTemplate": "",
+  "weeklyNoteFolder": "",
+  "localeOverride": "system-default",
+  "showDailyNote": true,
+  "dailyNoteFolder": "00_Inbox",
+  "dailyNoteFormat": "YYYY-MM-DD",
+  "dailyNoteTemplate": "templates/周度复盘模板.md"
+}

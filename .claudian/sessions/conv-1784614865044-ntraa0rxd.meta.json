@@ -1,0 +1,25 @@
+{
+  "id": "conv-1784614865044-ntraa0rxd",
+  "providerId": "claude",
+  "title": "Summarize ChatGPT share for prompts",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784614865045,
+  "updatedAt": 1784615399498,
+  "lastResponseAt": 1784614974006,
+  "sessionId": "8d03d6c7-9d08-4274-91df-5f9ef71d6432",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "8d03d6c7-9d08-4274-91df-5f9ef71d6432"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 28,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 27392,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 27420,
+    "percentage": 14
+  }
+}

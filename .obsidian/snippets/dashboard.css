@@ -1,0 +1,93 @@
+/*
+ * Dashboard 样式 - 用于欢迎页面和看板
+ */
+
+/* Dashboard 容器 */
+.dashboard {
+  padding: 20px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dashboard h1 {
+  font-size: 2em;
+  color: var(--brand-primary, #B76E4A);
+  border-bottom: 2px solid var(--brand-secondary, #F5F0E8);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.dashboard h2 {
+  font-size: 1.4em;
+  color: var(--brand-accent, #3D3D3D);
+  margin-top: 32px;
+  margin-bottom: 16px;
+  padding-left: 8px;
+  border-left: 3px solid var(--brand-primary, #B76E4A);
+}
+
+.dashboard h3 {
+  font-size: 1.1em;
+  color: var(--brand-primary, #B76E4A);
+  margin-top: 20px;
+}
+
+/* 快速链接网格 */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.dashboard-grid a {
+  display: block;
+  padding: 12px 16px;
+  background: var(--brand-secondary, #F5F0E8);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--brand-accent, #3D3D3D);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.dashboard-grid a:hover {
+  background: white;
+  border-color: var(--brand-primary, #B76E4A);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(183, 110, 74, 0.12);
+}
+
+/* 统计卡片 */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.stat-card {
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--brand-secondary, #F5F0E8);
+}
+
+.stat-card .stat-number {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--brand-primary, #B76E4A);
+}
+
+.stat-card .stat-label {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Callout 增强 */
+.callout {
+  border-radius: 8px !important;
+}

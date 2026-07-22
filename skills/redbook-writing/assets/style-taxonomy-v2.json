@@ -1,0 +1,439 @@
+{
+  "taxonomy_version": 2,
+  "primary_job": [
+    "feed_stop",
+    "search_answer",
+    "explain",
+    "trust_build",
+    "decision_support",
+    "relationship_build",
+    "conversion",
+    "authority_statement"
+  ],
+  "traffic_stage": [
+    "feed_stop",
+    "read_through",
+    "save_share",
+    "comment_cocreation",
+    "profile_follow"
+  ],
+  "material_code": [
+    "real_person_authorized",
+    "real_process_sequence",
+    "authorized_chat_screenshot",
+    "product_packshot",
+    "brand_assets",
+    "authorized_document_excerpt",
+    "original_photo_archive",
+    "original_illustration",
+    "text_only",
+    "unknown",
+    "other"
+  ],
+  "production_constraint_code": [
+    "deterministic_chinese_typesetting",
+    "brand_system_required",
+    "no_generated_evidence",
+    "no_face",
+    "mobile_capture_only",
+    "single_image_only",
+    "low_production_budget",
+    "unknown",
+    "other"
+  ],
+  "contraindication_code": [
+    "none",
+    "private_chat_without_authorization",
+    "real_process_unavailable",
+    "formal_authority_disallows_casual_annotation",
+    "generated_person_as_evidence",
+    "unlicensed_commercial_asset",
+    "sensitive_body_explicit",
+    "unknown",
+    "other"
+  ],
+  "motive_code": [
+    "identity_recognition",
+    "problem_relief",
+    "curiosity_gap",
+    "decision_reduction",
+    "social_expression",
+    "unknown",
+    "other"
+  ],
+  "distribution_mode": [
+    "organic",
+    "paid",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "model_lifecycle_stage": [
+    "candidate",
+    "supported",
+    "reusable",
+    "stale",
+    "deprecated"
+  ],
+  "reviewer_independence_status": [
+    "independent",
+    "conflicted",
+    "unknown"
+  ],
+  "asset_origin_code": [
+    "user_owned",
+    "owner_authorized",
+    "platform_observed_private",
+    "generated",
+    "licensed_stock",
+    "unknown",
+    "other"
+  ],
+  "rights_basis_code": [
+    "owned",
+    "written_permission",
+    "licensed",
+    "research_observation_only",
+    "unknown",
+    "other"
+  ],
+  "authorization_status": [
+    "approved",
+    "pending",
+    "denied",
+    "not_required",
+    "unknown"
+  ],
+  "delivery_surface": [
+    "xhs_feed",
+    "xhs_search",
+    "xhs_profile",
+    "xhs_shop",
+    "external_destination",
+    "unknown",
+    "other"
+  ],
+  "production_gate_status": [
+    "ready",
+    "needs_revision",
+    "needs_platform_confirmation",
+    "blocked_safety",
+    "blocked_rights",
+    "unknown"
+  ],
+  "account_capability_code": [
+    "first_party_analytics",
+    "native_shop",
+    "approved_external_link",
+    "commercial_content",
+    "unknown",
+    "other"
+  ],
+  "visual_feedback_reason_code": [
+    "attention_path_unclear",
+    "too_ppt_like",
+    "material_feels_synthetic",
+    "typography_unreadable",
+    "style_scope_mismatch",
+    "whole_direction_rejected",
+    "unknown",
+    "other"
+  ],
+  "carrier": [
+    "real_photo_diary",
+    "photo_annotation",
+    "screenshot_markup",
+    "chat_dramatization",
+    "text_card",
+    "checklist_steps",
+    "comparison_warning",
+    "collage_journal",
+    "single_image_reminder",
+    "process_video",
+    "screen_recording",
+    "talking_head_or_field_video",
+    "unknown",
+    "other"
+  ],
+  "slide_role": [
+    "cover",
+    "scene",
+    "context",
+    "evidence",
+    "comparison",
+    "step",
+    "boundary",
+    "transition",
+    "summary",
+    "cta",
+    "other"
+  ],
+  "composition": [
+    "single_focus",
+    "split",
+    "grid",
+    "layered_collage",
+    "full_bleed",
+    "interface_capture",
+    "unknown",
+    "other"
+  ],
+  "dominant_material": [
+    "real_photo",
+    "screenshot",
+    "chat_ui",
+    "paper_note",
+    "illustration",
+    "type_only",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "background_type": [
+    "photo",
+    "paper",
+    "screenshot",
+    "solid",
+    "texture",
+    "interface",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "subject_presence": [
+    "person",
+    "hand",
+    "object",
+    "environment",
+    "interface_only",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "layout_structure": [
+    "freeform",
+    "stacked",
+    "split",
+    "grid",
+    "full_bleed_overlay",
+    "chat_flow",
+    "list",
+    "unknown",
+    "other"
+  ],
+  "text_density": [
+    "sparse",
+    "medium",
+    "dense",
+    "variable",
+    "unknown"
+  ],
+  "hierarchy_levels": [
+    "one",
+    "two",
+    "three_plus",
+    "variable",
+    "unknown"
+  ],
+  "alignment": [
+    "left",
+    "center",
+    "right",
+    "mixed",
+    "organic",
+    "unknown",
+    "other"
+  ],
+  "spacing_pattern": [
+    "tight",
+    "even",
+    "variable",
+    "edge_to_edge",
+    "unknown",
+    "other"
+  ],
+  "font_feel": [
+    "system",
+    "editorial",
+    "handwritten",
+    "display",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "decoration_types": [
+    "none",
+    "sticker",
+    "tape",
+    "doodle",
+    "shape",
+    "emoji",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "annotation_style": [
+    "none",
+    "circle",
+    "arrow",
+    "underline",
+    "highlight",
+    "handwritten",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "imperfection_signals": [
+    "none",
+    "uneven_crop",
+    "off_grid",
+    "natural_shadow",
+    "hand_mark",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "image_text_relationship": [
+    "image_leads",
+    "text_leads",
+    "complementary",
+    "redundant",
+    "unknown",
+    "other"
+  ],
+  "text_surface": [
+    "title",
+    "cover",
+    "slide",
+    "caption",
+    "cta",
+    "unknown",
+    "other"
+  ],
+  "point_of_view": [
+    "first_person",
+    "second_person",
+    "third_person",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "audience_address": [
+    "direct",
+    "collective",
+    "implicit",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "register": [
+    "spoken",
+    "plain_explanatory",
+    "professional",
+    "diary",
+    "playful",
+    "sales",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "sentence_length_pattern": [
+    "short",
+    "medium",
+    "long",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "line_break_pattern": [
+    "sentence",
+    "phrase",
+    "dense_paragraph",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "punctuation_pattern": [
+    "light",
+    "standard",
+    "expressive",
+    "fragmented",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "emoji_pattern": [
+    "none",
+    "sparse",
+    "structural",
+    "dense",
+    "mixed",
+    "unknown",
+    "other"
+  ],
+  "hook_move": [
+    "name_scene",
+    "state_conflict",
+    "give_answer",
+    "show_evidence",
+    "ask_question",
+    "unknown",
+    "other"
+  ],
+  "narrative_moves": [
+    "setup",
+    "turn",
+    "contrast",
+    "reveal",
+    "reflection",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "evidence_move": [
+    "show_process",
+    "show_example",
+    "compare",
+    "cite_source",
+    "state_limit",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "payoff_move": [
+    "answer",
+    "framework",
+    "script",
+    "decision",
+    "boundary",
+    "none",
+    "unknown",
+    "other"
+  ],
+  "cta_move": [
+    "none",
+    "question",
+    "save",
+    "follow",
+    "native_action",
+    "commercial",
+    "unknown",
+    "other"
+  ],
+  "image_caption_division": [
+    "image_core_caption_context",
+    "image_summary_caption_detail",
+    "image_evidence_caption_interpretation",
+    "redundant",
+    "unknown",
+    "other"
+  ],
+  "rule_type": [
+    "cover",
+    "rhythm",
+    "visual",
+    "copy",
+    "material",
+    "anti_pattern"
+  ]
+}

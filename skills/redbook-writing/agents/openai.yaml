@@ -1,0 +1,7 @@
+interface:
+  display_name: "小红书研究与写作"
+  short_description: "研究真实样本、近期内容模板与逐页风格，生成可审查的小红书方案"
+  default_prompt: "使用 $redbook-writing 调研任意类目的真实样本、近期拍摄/内容模板与逐页风格，并产出有证据边界的选题、文案和视觉 Brief。"
+
+policy:
+  allow_implicit_invocation: true

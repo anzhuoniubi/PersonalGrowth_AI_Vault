@@ -1,0 +1,24 @@
+{
+  "id": "conv-1784615439058-653yr7730",
+  "providerId": "claude",
+  "title": "Extract restructuring prompt from ChatGPT chat",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784615439058,
+  "updatedAt": 1784688946178,
+  "lastResponseAt": 1784628387422,
+  "sessionId": "7090c4ac-fe8a-48ea-9984-cfb4108e8e6d",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "7090c4ac-fe8a-48ea-9984-cfb4108e8e6d"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 147,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 313728,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": false,
+    "contextTokens": 313875,
+    "percentage": 100
+  }
+}

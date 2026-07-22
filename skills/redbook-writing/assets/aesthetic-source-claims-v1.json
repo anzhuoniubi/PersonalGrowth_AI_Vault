@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "asset_id": "aesthetic-source-claims-v1",
+  "snapshot_date": "2026-07-18",
+  "status": "curated_bootstrap_candidate_only",
+  "performance_evidence_scope": "not_performance_evidence",
+  "source_audit": "docs/research/2026-07-18-aesthetic-prompt-source-audit.md",
+  "sources": [
+    {"source_id": "APS01", "url": "https://www.qian-gua.com/information/detail/1620", "source_type": "third_party_data_vendor_case", "incentive": "data_service_marketing", "time_scope": "historical_commercial_ranking_slice"},
+    {"source_id": "APS02", "url": "https://www.qian-gua.com/Home/ArticleDetail?id=934", "source_type": "third_party_data_vendor_playbook", "incentive": "data_service_marketing", "time_scope": "historical_video_popular_rankings"},
+    {"source_id": "APS03", "url": "https://xh.newrank.cn/product/article/article-detail/cc37e30a4df64d84", "source_type": "named_case_roundup", "incentive": "analytics_product_marketing", "time_scope": "historical_named_cases"},
+    {"source_id": "APS04", "url": "https://www.designkit.cn/article/xiaohongshufengmianpeituchuangyi", "source_type": "design_tool_vendor_guidance", "incentive": "template_tool_adoption", "time_scope": "2026-06 guidance"},
+    {"source_id": "APS05", "url": "https://www.27sem.com/article/8828", "source_type": "operator_sop", "incentive": "training_and_marketing_services", "time_scope": "2025-07 operator experience"},
+    {"source_id": "APS06", "url": "https://liyingcourse.oss-cn-beijing.aliyuncs.com/1749435750619%24_%24%E6%8A%A5%E5%91%8A2.pdf", "source_type": "public_ai_prompt_example", "incentive": "course_demonstration", "time_scope": "undated_public_course_artifact"},
+    {"source_id": "APS07", "url": "https://m.adquan.com/info/detail-351451", "source_type": "brand_event_case", "incentive": "campaign_case_promotion", "time_scope": "2025 campaign case"}
+  ],
+  "claims": [
+    {"claim_id": "APC-APS01-01", "source_id": "APS01", "claim_kind": "historical_sample_observation", "claim": "历史商业榜单切片中，精致图与大字信息图均出现在高互动样本；大字承担场景与利益点压缩。", "claim_text_sha256": "eeb977e4fdfb4b7aa01240a1f7bf81e21334cc61bca99d3882c8f2c77a38fd03", "allowed_use_codes": ["candidate_prompt_variable", "task_fit_hypothesis"], "prohibited_use_codes": ["performance_tier", "style_ready_evidence", "traffic_causality"], "limitations": "历史商业 TOP 样本，无曝光分母、同账号基线或当前算法证据。"},
+    {"claim_id": "APC-APS02-01", "source_id": "APS02", "claim_kind": "historical_sample_observation", "claim": "历史热门视频笔记存在近人近物、纯标题、对比和色彩等不同首屏路径。", "claim_text_sha256": "4de79b89c714085f090cb8fed0808de0fb5b06288eab71bbb0b14b740f9a03e8", "allowed_use_codes": ["candidate_prompt_variable", "carrier_variation"], "prohibited_use_codes": ["performance_tier", "style_ready_evidence", "traffic_causality"], "limitations": "历史热门榜只说明多样性，不说明任一路径胜出。"},
+    {"claim_id": "APC-APS03-01", "source_id": "APS03", "claim_kind": "named_case_observation", "claim": "具名案例显示，可见现象与真实制作过程可以同时承担好奇缺口与证明工作。", "claim_text_sha256": "e1723462bef16c4b5cf0f1b9511436d92cd5ccf8fcaf2b6effd1953b10ebe258", "allowed_use_codes": ["candidate_prompt_variable", "real_process_hypothesis"], "prohibited_use_codes": ["performance_tier", "style_ready_evidence", "traffic_causality"], "limitations": "少数案例，不是匹配对照或因果实验。"},
+    {"claim_id": "APC-APS04-01", "source_id": "APS04", "claim_kind": "vendor_workflow_guidance", "claim": "设计前先定义用途、受众和真实素材；封面需要明确焦点与阅读顺序。", "claim_text_sha256": "dc61fda747e165b21df260917d514c2596d49b0750c1854748451d251a120e18", "allowed_use_codes": ["workflow_field", "candidate_review_check"], "prohibited_use_codes": ["performance_tier", "style_ready_evidence", "traffic_causality"], "limitations": "模板工具商建议，存在产品采用激励。"},
+    {"claim_id": "APC-APS05-01", "source_id": "APS05", "claim_kind": "operator_workflow_experience", "claim": "用户所处决策阶段应先于内容载体；复盘指标需要按漏斗分开。", "claim_text_sha256": "84f38d079b0296c4d2748d07b78dcc43e88e8ec4e9895075fa1353960f14a545", "allowed_use_codes": ["workflow_field", "task_router"], "prohibited_use_codes": ["performance_tier", "style_ready_evidence", "traffic_causality"], "limitations": "操盘经验稿，没有公开对照实验。"},
+    {"claim_id": "APC-APS06-01", "source_id": "APS06", "claim_kind": "anti_pattern_artifact", "claim": "泛化博主人设、固定痛点—方法—互动和形容词式语气是可审计的 AI prompt 反例，不是表现证据。", "claim_text_sha256": "96432b94976633e7895909394e623dfaa30168c5c8f52aac12f7470e86c1b822", "allowed_use_codes": ["anti_pattern", "candidate_review_check"], "prohibited_use_codes": ["performance_tier", "style_ready_evidence", "traffic_causality"], "limitations": "课程示例只证明该表达存在，不证明使用后的内容表现。"},
+    {"claim_id": "APC-APS07-01", "source_id": "APS07", "claim_kind": "brand_event_case", "claim": "用户痕迹和共创素材比抽象“活人感”更可执行，但活动结果不能归因给单篇视觉。", "claim_text_sha256": "906c6f1ce06f27274c0d548b9ab98dbcf111090a75c85045e7ae882e6fe62486", "allowed_use_codes": ["provenance_field", "candidate_prompt_variable"], "prohibited_use_codes": ["performance_tier", "style_ready_evidence", "traffic_causality"], "limitations": "活动结果混合平台资源、明星、媒体和线下体验。"}
+  ]
+}

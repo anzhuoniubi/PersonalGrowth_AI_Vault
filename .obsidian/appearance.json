@@ -1,0 +1,15 @@
+{
+  "accentColor": "#B76E4A",
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "dashboard",
+    "brand-colors",
+    "custom-callouts"
+  ],
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": "",
+  "showViewHeader": false,
+  "translucency": false,
+  "nativeMenus": false
+}

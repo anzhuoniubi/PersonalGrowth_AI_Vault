@@ -1,0 +1,24 @@
+{
+  "id": "conv-1784014333168-oznz2jt5q",
+  "providerId": "claude",
+  "title": "Create content on 莫向外求 and HSP",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784014333178,
+  "updatedAt": 1784391352125,
+  "lastResponseAt": 1784391352125,
+  "sessionId": "8a63af56-68cd-495e-9776-1815e837f551",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "8a63af56-68cd-495e-9776-1815e837f551"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 148,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 405248,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 405396,
+    "percentage": 100
+  }
+}

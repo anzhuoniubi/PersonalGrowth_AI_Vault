@@ -1,0 +1,24 @@
+{
+  "id": "conv-1784551455689-k7zgy52mt",
+  "providerId": "claude",
+  "title": "Optimize system with mentor-led questions",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784551455690,
+  "updatedAt": 1784614818359,
+  "lastResponseAt": 1784604028919,
+  "sessionId": "a239ed5d-8894-40a5-9a54-84380a01e149",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "a239ed5d-8894-40a5-9a54-84380a01e149"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 319,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 40960,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 41279,
+    "percentage": 21
+  }
+}

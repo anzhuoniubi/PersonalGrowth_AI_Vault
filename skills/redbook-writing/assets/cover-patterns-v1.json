@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0.0",
+  "library_id": "xhs-native-cover-patterns-v1",
+  "updated_at": "2026-07-18",
+  "claim_ceiling": "task_fit",
+  "output_state_ceiling": "prototype_only",
+  "selection_contract": {
+    "exact_match_fields": ["primary_job", "carrier"],
+    "visual_evidence_roles": ["none", "supporting", "primary"],
+    "material_gate": "at_least_one_required_material_option_must_be_fully_satisfied",
+    "priority_rule": "text cards are conditional defaults for text-first jobs only; primary visual proof overrides them",
+    "production_authority": "published_style_binding_only"
+  },
+  "evidence_contract": {
+    "public_metrics_role": "public_proxy_observation_only",
+    "local_reference_rights": "user_supplied_reference_only",
+    "research_snapshot": "docs/research/2026-07-18-native-cover-patterns.json",
+    "forbidden_upgrade": "No pattern becomes a traffic or performance rule without first-party impressions/entries, matched controls and publication receipts."
+  },
+  "patterns": [
+    {
+      "pattern_id": "CP01",
+      "name": "黑底单命题强调字卡",
+      "family": "text_dominant_native_card",
+      "variant": "black_accent_card",
+      "jobs": ["feed_stop", "authority_statement", "explain", "relationship_build"],
+      "carriers": ["text_card", "single_image_reminder"],
+      "priority_policy": {
+        "rank": 10,
+        "default_when": ["visual_evidence_role_is_none_or_supporting", "one_proposition_can_be_understood_at_feed_size", "caption_or_inner_pages_can_close_the_promise"],
+        "override_when": ["real_scene_or_result_is_primary_proof"]
+      },
+      "required_materials_any": [["truthful_serious_premise"], ["spoken_claim_sources"]],
+      "contraindications": ["real_scene_is_primary_evidence", "result_difference_is_primary_evidence", "exact_ui_path_is_primary_evidence"],
+      "design_contract": {
+        "first_screen_job": "state one legible proposition and mark no more than two semantic stress points",
+        "hierarchy": ["micro_meta", "proposition", "semantic_emphasis"],
+        "density": "one proposition; line breaks carry rhythm instead of modules",
+        "color": "dark card plus one accent hue",
+        "typography": "deterministic Chinese typesetting; no generated glyphs",
+        "thumbnail_check": "proposition remains understandable before reading caption"
+      },
+      "counterexample": "If a real before/after, product texture, face state or system path is the first proof, a text card hides the evidence and lengthens promise-to-proof distance.",
+      "evidence_refs": ["LOCAL-COVER-001", "LOCAL-COVER-002", "O-XHS-011"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP02",
+      "name": "轻纸张问题梗图字卡",
+      "family": "text_dominant_native_card",
+      "variant": "paper_meme_card",
+      "jobs": ["feed_stop", "explain", "relationship_build"],
+      "carriers": ["text_card", "single_image_reminder"],
+      "priority_policy": {"rank": 20, "default_when": ["question_or_tension_is_primary", "authorized_object_or_sticker_can_add_emotion"], "override_when": ["real_scene_or_result_is_primary_proof"]},
+      "required_materials_any": [["truthful_serious_premise"], ["owned_proxy_concept", "real_problem_or_desire"]],
+      "contraindications": ["real_scene_is_primary_evidence", "unlicensed_sticker_or_meme", "result_difference_is_primary_evidence"],
+      "design_contract": {
+        "first_screen_job": "make the question legible and let one authorized object or sticker close the emotional tone",
+        "hierarchy": ["small_series_label", "question", "single_emotional_object"],
+        "density": "one question plus one supporting visual",
+        "color": "warm paper base plus one accent hue",
+        "typography": "deterministic text with optional outline; no generated glyphs",
+        "thumbnail_check": "question reads without relying on the sticker"
+      },
+      "counterexample": "A random meme or sticker without rights or information work is decoration, not native evidence.",
+      "evidence_refs": ["LOCAL-COVER-003", "XHS-COVER-SEARCH-20260718"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP03",
+      "name": "荧光便签人话字卡",
+      "family": "text_dominant_native_card",
+      "variant": "highlight_note_card",
+      "jobs": ["feed_stop", "explain", "relationship_build"],
+      "carriers": ["text_card", "single_image_reminder"],
+      "priority_policy": {"rank": 30, "default_when": ["lived_voice_matters_more_than_visual_proof", "one_or_two_words_need_local_highlight"], "override_when": ["real_scene_or_result_is_primary_proof"]},
+      "required_materials_any": [["truthful_serious_premise"], ["experience_provenance", "real_problem_or_desire"]],
+      "contraindications": ["real_scene_is_primary_evidence", "result_difference_is_primary_evidence", "highlight_is_pure_decoration"],
+      "design_contract": {
+        "first_screen_job": "deliver a spoken-language proposition with one or two local highlights",
+        "hierarchy": ["faint_series_mark", "spoken_proposition", "highlight_blocks"],
+        "density": "natural wrapping; no dashboard modules",
+        "color": "light high-energy base plus one marker color",
+        "typography": "deterministic Chinese typesetting; uneven wrapping is allowed",
+        "thumbnail_check": "highlight does not split the sentence into fragments"
+      },
+      "counterexample": "Handwriting, sticky notes and fluorescent markers are not Xiaohongshu flavor by themselves; a weak proposition remains weak.",
+      "evidence_refs": ["LOCAL-COVER-004", "O-XHS-011"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP04",
+      "name": "真实主体实拍 + 稀疏标题",
+      "family": "real_visual_evidence",
+      "jobs": ["trust_build", "relationship_build", "conversion", "feed_stop"],
+      "carriers": ["real_photo_diary", "photo_annotation", "single_image_reminder"],
+      "priority_policy": {"rank": 5, "default_when": ["owned_or_authorized_scene_is_first_proof"], "override_when": ["no_real_scene_material"]},
+      "required_materials_any": [["owned_or_authorized_lived_scene"]],
+      "contraindications": ["generated_scene_presented_as_real", "subject_occluded_by_title"],
+      "design_contract": {
+        "first_screen_job": "let the person, object or scene prove presence before copy explains it",
+        "hierarchy": ["real_subject", "sparse_scope_label"],
+        "density": "image dominant; one short label only when needed",
+        "color": "preserve source material; no automatic brand wash",
+        "typography": "copy avoids faces, hands, controls and product evidence",
+        "thumbnail_check": "subject and scene remain recognizable"
+      },
+      "counterexample": "An AI hotel, skin or room image cannot stand in for lived experience; a headline should not cover the proof.",
+      "evidence_refs": ["O-XHS-010", "XHS-FEED-20260718"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP05",
+      "name": "真实前后结果对照",
+      "family": "real_visual_evidence",
+      "jobs": ["decision_support", "trust_build", "conversion"],
+      "carriers": ["comparison_warning", "photo_annotation"],
+      "priority_policy": {"rank": 1, "default_when": ["result_difference_is_primary_proof"], "override_when": ["before_or_after_is_missing_or_incomparable"]},
+      "required_materials_any": [["owned_or_authorized_before_after"]],
+      "contraindications": ["fabricated_before", "incomparable_capture_conditions", "missing_process_or_cost_context"],
+      "design_contract": {
+        "first_screen_job": "show the initial problem and result difference at comparable scale",
+        "hierarchy": ["before", "after", "single_comparison_axis"],
+        "density": "two evidence fields plus one axis label",
+        "color": "do not recolor one side to manufacture contrast",
+        "typography": "labels identify conditions, not hype",
+        "thumbnail_check": "the difference is visible without opening"
+      },
+      "counterexample": "Different lighting, crop, pose or retouching can create a fake result even when both images are real.",
+      "evidence_refs": ["O-XHS-008", "EXT-BRAND-PLAN"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP06",
+      "name": "截图 / 文件证据批注",
+      "family": "documented_evidence",
+      "jobs": ["search_answer", "explain", "authority_statement", "decision_support"],
+      "carriers": ["screenshot_markup"],
+      "priority_policy": {"rank": 2, "default_when": ["exact_path_or_document_is_first_proof"], "override_when": ["source_is_unverifiable_or_private"]},
+      "required_materials_any": [["current_owned_screen_captures"], ["authorized_document_excerpt_or_real_tool"]],
+      "contraindications": ["fabricated_ui", "private_data_visible", "annotation_has_no_action_meaning"],
+      "design_contract": {
+        "first_screen_job": "show the exact path, action point or authentic document scope",
+        "hierarchy": ["source_interface_or_document", "one_action_annotation", "result_or_scope"],
+        "density": "one action per frame; crop unrelated chrome",
+        "color": "annotation color has one semantic meaning",
+        "typography": "source text remains readable and unaltered",
+        "thumbnail_check": "viewer can identify the system or document type"
+      },
+      "counterexample": "A red box that does not identify an action, or a recreated system screen, creates visual certainty without evidence.",
+      "evidence_refs": ["O-XHS-006", "XHS-FEED-20260718"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP07",
+      "name": "清单 / 表格 / 比较网格",
+      "family": "structured_information",
+      "jobs": ["search_answer", "explain", "decision_support", "authority_statement"],
+      "carriers": ["checklist_steps", "comparison_warning"],
+      "priority_policy": {"rank": 8, "default_when": ["scope_or_comparison_axes_are_the_value"], "override_when": ["no_verified_items_or_axes"]},
+      "required_materials_any": [["verified_check_items"], ["uniform_test_protocol"]],
+      "contraindications": ["unverified_numbers", "ppt_module_overload", "mixed_comparison_protocols"],
+      "design_contract": {
+        "first_screen_job": "compress scope, axes or decision branches into a saveable map",
+        "hierarchy": ["scope_title", "items_or_axes", "source_or_condition"],
+        "density": "cover previews the map; inner pages carry full detail",
+        "color": "color encodes status or grouping only",
+        "typography": "no paragraph-sized cells on the cover",
+        "thumbnail_check": "scope is clear even if item detail is not yet read"
+      },
+      "counterexample": "Shrinking a corporate slide onto a phone creates modules without an attention path or proof hierarchy.",
+      "evidence_refs": ["O-XHS-004", "O-XHS-009", "EXT-SOHU-20250716"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP08",
+      "name": "PLOG / 时间档案拼贴",
+      "family": "multi_scene_evidence",
+      "jobs": ["relationship_build", "trust_build", "feed_stop"],
+      "carriers": ["collage_journal", "real_photo_diary"],
+      "priority_policy": {"rank": 6, "default_when": ["multiple_real_scenes_jointly_prove_time_or_experience"], "override_when": ["images_have_no_narrative_relation"]},
+      "required_materials_any": [["owned_or_fully_authorized_photo_archive"]],
+      "contraindications": ["unrelated_asset_pile", "fake_shared_history", "collage_hides_primary_scene"],
+      "design_contract": {
+        "first_screen_job": "let several real moments jointly establish a time span, route or lived arc",
+        "hierarchy": ["anchor_scene", "supporting_scenes", "short_time_or_theme_label"],
+        "density": "every image has a narrative role; collage count is not a target",
+        "color": "preserve authentic variation across dates and scenes",
+        "typography": "copy names the arc instead of labeling every tile",
+        "thumbnail_check": "one anchor remains dominant"
+      },
+      "counterexample": "A grid of attractive but unrelated photos signals asset abundance, not a story or result.",
+      "evidence_refs": ["O-XHS-012", "XHS-OPERATOR-697A", "EXT-MEITU-20250708"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP09",
+      "name": "产品 / 质感 / 上手特写",
+      "family": "product_evidence",
+      "jobs": ["decision_support", "conversion", "trust_build"],
+      "carriers": ["photo_annotation", "comparison_warning", "single_image_reminder"],
+      "priority_policy": {"rank": 3, "default_when": ["texture_fit_or_use_relation_is_first_proof"], "override_when": ["only_packshot_is_available"]},
+      "required_materials_any": [["owned_or_authorized_arrival_and_use_photos"], ["uniform_test_protocol"], ["owned_or_authorized_product_packshots", "scene_context_receipt"]],
+      "contraindications": ["packshot_without_use_relation", "fabricated_effect", "inconsistent_comparison_conditions"],
+      "design_contract": {
+        "first_screen_job": "show texture, scale, fit, detail or use relationship before listing claims",
+        "hierarchy": ["product_evidence", "single_axis_or_fit_label", "scope_condition"],
+        "density": "one product relation or one controlled comparison",
+        "color": "retain material color and skin/object context",
+        "typography": "labels point to observable properties",
+        "thumbnail_check": "texture or use relationship remains visible"
+      },
+      "counterexample": "A polished packshot can look commercial while proving nothing about texture, fit, use or comparison.",
+      "evidence_refs": ["EXT-BRAND-PLAN", "EXT-MEITU-20250708"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP10",
+      "name": "授权对话 / 明示演绎首帧",
+      "family": "documented_dialogue",
+      "jobs": ["relationship_build", "trust_build", "feed_stop"],
+      "carriers": ["chat_dramatization"],
+      "priority_policy": {"rank": 4, "default_when": ["dialogue_itself_is_the_story_evidence", "source_or_fiction_status_is_visible_on_first_frame"], "override_when": ["dialogue_rights_or_disclosure_is_missing"]},
+      "required_materials_any": [["authorized_chat_original_or_fiction_disclosure", "redacted_private_data", "scene_context_receipt"]],
+      "contraindications": ["fake_chat_presented_as_real", "private_data_visible", "fiction_label_hidden_in_caption"],
+      "design_contract": {
+        "first_screen_job": "show the decisive exchange together with a visible source or fiction label",
+        "hierarchy": ["truth_status", "decisive_exchange", "scene_scope"],
+        "density": "one exchange or one turn conflict; the full transcript belongs inside",
+        "color": "do not imitate a real app to manufacture authenticity",
+        "typography": "deterministic text; names, avatars and timestamps require rights or neutral replacement",
+        "thumbnail_check": "viewer can see both the tension and whether it is authorized or dramatized"
+      },
+      "counterexample": "A fabricated chat UI with realistic avatars and timestamps creates false human evidence even when a disclosure is buried in the caption.",
+      "evidence_refs": ["VDC13", "EXT-SOHU-20250716"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP11",
+      "name": "真实动作过程视频首帧",
+      "family": "real_visual_evidence",
+      "jobs": ["trust_build", "explain", "decision_support"],
+      "carriers": ["process_video"],
+      "priority_policy": {"rank": 2, "default_when": ["observable_action_is_primary_proof"], "override_when": ["process_or_rights_receipt_is_missing"]},
+      "required_materials_any": [["real_process_video", "verified_process_sequence", "rights_clearance"]],
+      "contraindications": ["montage_without_process_proof", "generated_action_presented_as_real", "result_only_thumbnail"],
+      "design_contract": {
+        "first_screen_job": "freeze one legible action that proves the process has begun",
+        "hierarchy": ["observable_action", "short_action_contract", "scope_or_cost"],
+        "density": "one action and one result contract; editing rhythm stays in the video",
+        "color": "preserve the actual process conditions",
+        "typography": "copy names the action or constraint and avoids covering hands, tools or controls",
+        "thumbnail_check": "the action remains identifiable as a still frame"
+      },
+      "counterexample": "A polished result thumbnail paired with a process title proves neither the action nor the route used to reach it.",
+      "evidence_refs": ["VDC14", "XHS-OPERATOR-697A"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP12",
+      "name": "录屏路径动作首帧",
+      "family": "documented_evidence",
+      "jobs": ["search_answer", "explain"],
+      "carriers": ["screen_recording"],
+      "priority_policy": {"rank": 2, "default_when": ["exact_current_interface_path_is_primary_proof"], "override_when": ["interface_version_or_privacy_receipt_is_missing"]},
+      "required_materials_any": [["current_interface_capture", "device_or_app_version", "verified_path", "privacy_redaction"]],
+      "contraindications": ["fabricated_ui", "obsolete_interface", "private_data_visible", "cursor_has_no_action_meaning"],
+      "design_contract": {
+        "first_screen_job": "show the current interface, the action point and the promised result in one versioned frame",
+        "hierarchy": ["current_interface", "single_action_point", "result_scope"],
+        "density": "one action per frame; unrelated system chrome is cropped",
+        "color": "one annotation color has one action meaning",
+        "typography": "source UI text remains unaltered and readable",
+        "thumbnail_check": "viewer can identify the app or system and the next action"
+      },
+      "counterexample": "A recreated or outdated interface can look clear while sending users to a path that no longer exists.",
+      "evidence_refs": ["VDC15", "XHS-FEED-20260718"],
+      "claim_ceiling": "task_fit"
+    },
+    {
+      "pattern_id": "CP13",
+      "name": "真人口播 / 现场判断首帧",
+      "family": "real_visual_evidence",
+      "jobs": ["explain", "trust_build", "authority_statement"],
+      "carriers": ["talking_head_or_field_video"],
+      "priority_policy": {"rank": 4, "default_when": ["authorized_person_or_field_context_carries_judgment"], "override_when": ["person_or_claim_source_is_missing"]},
+      "required_materials_any": [["real_person_authorized", "spoken_claim_sources", "experience_provenance", "rights_clearance"]],
+      "contraindications": ["generated_person_as_evidence", "authority_costume_without_source", "face_or_field_context_occluded"],
+      "design_contract": {
+        "first_screen_job": "let an authorized person or field context establish who is making which bounded judgment",
+        "hierarchy": ["authorized_person_or_field", "bounded_judgment", "source_or_experience_scope"],
+        "density": "one judgment; supporting evidence arrives in the frame or first beat",
+        "color": "preserve the real environment unless a published binding requires a non-deceptive treatment",
+        "typography": "title avoids covering eyes, mouth, hands, badge, product or field evidence",
+        "thumbnail_check": "speaker/context and judgment remain recognizable together"
+      },
+      "counterexample": "A close-up face plus an unsupported expert-sounding claim creates authority theater rather than evidence.",
+      "evidence_refs": ["VDC16", "XHS-FEED-20260718"],
+      "claim_ceiling": "task_fit"
+    }
+  ]
+}

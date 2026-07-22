@@ -1,0 +1,46 @@
+/*
+ * 品牌配色 - 个人成长 AI 自媒体系统
+ * 主色：#B76E4A 焦糖色
+ * 辅色：#F5F0E8 米白色
+ * 强调：#3D3D3D 深灰色
+ * 点缀：#C9A96E 暖金色
+ */
+
+/* 焦糖色强调色 - 适配亮色主题 */
+.theme-light {
+  --brand-primary: #B76E4A;
+  --brand-secondary: #F5F0E8;
+  --brand-accent: #3D3D3D;
+  --brand-gold: #C9A96E;
+  --brand-bg-warm: #FAF6F0;
+
+  --interactive-accent: var(--brand-primary);
+  --text-accent: var(--brand-primary);
+  --tag-color: var(--brand-primary);
+  --tag-background: rgba(183, 110, 74, 0.08);
+  --link-color: var(--brand-primary);
+  --link-color-hover: #9A5A3A;
+  --nav-item-color-active: var(--brand-primary);
+  --titlebar-background: var(--brand-bg-warm);
+}
+
+/* 顶部标题样式 */
+.view-header-title {
+  color: var(--brand-primary) !important;
+  font-weight: 600;
+}
+
+/* 标签美化 */
+.tag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+  border-radius: 8px;
+  padding: 1px 8px;
+  font-size: 0.85em;
+}
+
+/* 选中时的颜色 */
+.is-being-renamed,
+.is-flashing {
+  border-left-color: var(--brand-primary) !important;
+}

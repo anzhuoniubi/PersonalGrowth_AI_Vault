@@ -1,0 +1,38 @@
+{
+  "command_timeout": 5,
+  "template_folder": "templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "03_选题库",
+      "template": "templates/选题卡片模板.md"
+    },
+    {
+      "folder": "05_内容生产库",
+      "template": "templates/内容存档模板.md"
+    },
+    {
+      "folder": "12_数据复盘",
+      "template": "templates/周度复盘模板.md"
+    },
+    {
+      "folder": "02_用户研究",
+      "template": "templates/用户洞察模板.md"
+    }
+  ],
+  "syntax_highlight": true,
+  "syntax_version": "auto",
+  "enabled_templates_hotkeys": [],
+  "startup_templates": []
+}

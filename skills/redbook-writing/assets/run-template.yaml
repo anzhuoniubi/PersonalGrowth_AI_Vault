@@ -1,0 +1,20 @@
+run_id: RUN-YYYYMMDD-001
+run_contract_version: 2
+mode: discovery
+status: in_progress
+created_at: YYYY-MM-DD
+category: "待填写"
+target_audience: "待填写：人群 + 具体处境"
+primary_goal: "待填写：本次要回答的问题"
+commercial_goal: "none"
+business_objective: traffic_first
+objective_primary_job: feed_stop
+performance_visibility_scope: public_proxy
+style_requirement: both
+style_library_path: ../_style_library/style-library.sqlite
+style_taxonomy_version: 2
+trend_template_requirement: none
+window_start: YYYY-MM-DD
+window_end: YYYY-MM-DD
+assumptions: []
+limitations: []

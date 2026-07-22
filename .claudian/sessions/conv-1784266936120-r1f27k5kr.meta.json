@@ -1,0 +1,278 @@
+{
+  "id": "conv-1784266936120-r1f27k5kr",
+  "providerId": "claude",
+  "title": "Evaluate 复利 as content topic",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784266936121,
+  "updatedAt": 1784376799211,
+  "lastResponseAt": 1784369253344,
+  "sessionId": "338fc9ea-a10d-48d4-9433-e707b7fc73f8",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "338fc9ea-a10d-48d4-9433-e707b7fc73f8",
+    "subagentData": {
+      "call_00_Myxhrh4mgbG4cZ4VeFYS7858": {
+        "id": "call_00_Myxhrh4mgbG4cZ4VeFYS7858",
+        "description": "Find topic evaluation skills",
+        "prompt": "Search the vault for any topic evaluation skills, topic scoring templates, or existing topic files. Look in:\n1. skills/strategy/ directory - check for any topic-related skills\n2. 03_选题库/ - see what topics already exist and any scoring formats used\n3. 09_提示词库/ - check for any topic evaluation prompt templates\n\nList the contents of these directories and read any relevant files found.",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "call_00_K2m1WtopGfTymWCyzaQ89062",
+            "name": "Bash",
+            "input": {
+              "command": "ls -la /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/ 2>/dev/null || echo \"Directory not found\"",
+              "description": "List contents of skills/strategy/ directory"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "total 24\ndrwxr-xr-x@  5 mac  staff   160 Jul 14 15:03 .\ndrwxr-xr-x@ 10 mac  staff   320 Jul 14 15:01 ..\n-rw-r--r--@  1 mac  staff  1854 Jul 14 15:03 个人品牌定位.md\n-rw-r--r--@  1 mac  staff  1676 Jul 14 15:03 用户画像分析.md\n-rw-r--r--@  1 mac  staff  1794 Jul 14 15:03 赛道分析.md"
+          },
+          {
+            "id": "call_01_ITCS1rWWtXxF12jyPmRS1344",
+            "name": "Bash",
+            "input": {
+              "command": "ls -la /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/ 2>/dev/null || echo \"Directory not found\"",
+              "description": "List contents of 03_选题库/ directory"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "total 40\ndrwxr-xr-x@  7 mac  staff   224 Jul 17 08:45 .\ndrwxr-xr-x@ 32 mac  staff  1024 Jul 16 16:52 ..\n-rw-r--r--@  1 mac  staff  1998 Jul 15 09:57 2026-07-14_选题_莫向外求与高敏感人群.md\n-rw-r--r--@  1 mac  staff  1788 Jul 17 08:45 2026-07-16_选题_INFP与性压抑的升华路径.md\n-rw-r--r--@  1 mac  staff  1883 Jul 16 15:55 2026-07-16_选题_男性INFP择偶鄙视链.md\n-rw-r--r--@  1 mac  staff  1661 Jul 14 15:11 选题卡片模板.md\n-rw-r--r--@  1 mac  staff   596 Jul 15 09:31 选题看板.md"
+          },
+          {
+            "id": "call_02_acBnuyqUUeT54P193p4M9418",
+            "name": "Bash",
+            "input": {
+              "command": "ls -la /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/09_提示词库/ 2>/dev/null || echo \"Directory not found\"",
+              "description": "List contents of 09_提示词库/ directory"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "total 16\ndrwxr-xr-x@  4 mac  staff   128 Jul 15 08:48 .\ndrwxr-xr-x@ 32 mac  staff  1024 Jul 16 16:52 ..\n-rw-r--r--@  1 mac  staff  3512 Jul 14 15:17 AI创作提示词集.md\n-rw-r--r--@  1 mac  staff  3229 Jul 15 08:48 系统自检与优化提示词.md"
+          },
+          {
+            "id": "call_00_SCdCOpk0Mym9SoZPEhyD1868",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/个人品牌定位.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 个人品牌定位 Skill\n2\t\n3\t## 1. Skill名称\n4\t个人品牌定位\n5\t\n6\t## 2. 使用场景\n7\t- 账号冷启动阶段的定位设计\n8\t- 每季度品牌定位回顾与调整\n9\t- 进入新赛道时的定位评估\n10\t- 内容方向跑偏时的纠偏决策\n11\t\n12\t## 3. 输入格式\n13\t```yaml\n14\tcreator_info:\n15\t  name: \"\"\n16\t  background: \"\"\n17\t  expertise: []\n18\t  personality_traits: []\n19\t  values: []\n20\tmarket_info:\n21\t  target_audience: \"\"\n22\t  competitors: []\n23\t  market_trends: []\n24\tgoals:\n25\t  short_term: \"\"\n26\t  long_term: \"\"\n27\t```\n28\t\n29\t## 4. 执行流程\n30\t1. **自我分析**：梳理个人优势、经历、独特视角\n31\t2. **市场扫描**：分析竞品定位、用户需求空白\n32\t3. **定位假设**：提出3个可能的定位方向\n33\t4. **差异化验证**：评估每个方向的独特性\n34\t5. **情感共鸣测试**：目标用户是否会为此停留\n35\t6. **可持续性评估**：能否持续产出相关内容\n36\t7. **定位确定**：输出最终定位声明\n37\t\n38\t## 5. 输出格式\n39\t```markdown\n40\t## 定位声明\n41\t{一句话说明我是谁、为谁、提供什么价值}\n42\t\n43\t## 差异化优势\n44\t1. {独特优势1}\n45\t2. {独特优势2}\n46\t\n47\t## 目标用户\n48\t{精准用户画像}\n49\t\n50\t## 内容边界\n51\t- 做：{内容范围}\n52\t- 不做：{内容红线}\n53\t\n54\t## 表达基调\n55\t{语气、风格、态度描述}\n56\t```\n57\t\n58\t## 6. 示例\n59\t### 输入\n60\t```yaml\n61\tcreator_info:\n62\t  name: \"小明\"\n63\t  background: \"5年互联网产品经理\"\n64\t  expertise: [\"用户研究\", \"数据分析\", \"产品思维\"]\n65\t  personality_traits: [\"理性\", \"温和\", \"有条理\"]\n66\t  values: [\"真实\", \"长期主义\", \"利他\"]\n67\t```\n68\t\n69\t### 输出\n70\t```\n71\t## 定位声明\n72\t我是小明，一个用产品经理思维做个人成长的同行者，\n73\t帮25-35岁职场人用系统方法实现可持续成长。\n74\t\n75\t## 差异化优势\n76\t1. 产品经理的理性视角 × 个人成长的感性需求\n77\t2. 强调\"可执行的系统\"而非碎片化技巧\n78\t3. 用数据验证方法有效性，不空谈理论\n79\t```\n80\t"
+          },
+          {
+            "id": "call_01_J6orBALG4A4cuPCyKhhA8556",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/用户画像分析.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 用户画像分析 Skill\n2\t\n3\t## 1. Skill名称\n4\t用户画像分析\n5\t\n6\t## 2. 使用场景\n7\t- 账号定位时的目标用户定义\n8\t- 内容策略调整时的用户验证\n9\t- 新产品/服务设计前的用户研究\n10\t- 每月用户画像更新\n11\t\n12\t## 3. 输入格式\n13\t```yaml\n14\tdata_sources:\n15\t  - comment_samples: []\n16\t  - competitor_audience: \"\"\n17\t  - search_keywords: []\n18\t  - interaction_data: {}\n19\tfocus_area: \"\"\n20\t```\n21\t\n22\t## 4. 执行流程\n23\t1. **数据收集**：从评论、私信、竞品关注者中收集信息\n24\t2. **人口属性分析**：年龄、职业、城市、收入\n25\t3. **行为特征分析**：阅读习惯、消费偏好、信息获取渠道\n26\t4. **心理特征分析**：价值观、动机、恐惧、渴望\n27\t5. **痛点分级**：核心痛点→次要痛点→隐性需求\n28\t6. **画像建模**：创建2-3个典型用户角色\n29\t7. **内容映射**：每个画像匹配对应的内容方向\n30\t\n31\t## 5. 输出格式\n32\t```markdown\n33\t## 用户角色：{角色名称}\n34\t- 年龄/职业：{基本信息}\n35\t- 一句话描述：{角色特征}\n36\t- 核心痛点：{top 3}\n37\t- 内容偏好：{喜欢什么类型的内容}\n38\t- 决策路径：{从看到到行动的过程}\n39\t- 触发词：{最能引起ta注意的词}\n40\t```\n41\t\n42\t## 6. 示例\n43\t```markdown\n44\t## 用户角色：焦虑的职场进阶者\n45\t- 年龄/职业：28岁，互联网运营\n46\t- 一句话描述：工作3-5年，想突破但找不到方向\n47\t- 核心痛点：\n48\t  1. 感觉在重复劳动，没有成长\n49\t  2. 想学习但不知道学什么\n50\t  3. 看到同龄人成功更焦虑\n51\t- 内容偏好：方法论+真实案例+可执行步骤\n52\t- 决策路径：看到标题→快速浏览→收藏→周末细看→尝试\n53\t- 触发词：瓶颈、突破、系统、可执行、真实\n54\t```\n55\t"
+          },
+          {
+            "id": "call_02_41Pj5UlzLCge8sbPwJ2v1898",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/赛道分析.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 赛道分析 Skill\n2\t\n3\t## 1. Skill名称\n4\t赛道分析\n5\t\n6\t## 2. 使用场景\n7\t- 入局新赛道前的可行性评估\n8\t- 现有赛道竞争格局分析\n9\t- 寻找蓝海细分市场\n10\t- 季度战略规划\n11\t\n12\t## 3. 输入格式\n13\t```yaml\n14\ttarget_field: \"\"\n15\tsub_niches: []\n16\tknown_competitors: []\n17\tpersonal_advantages: []\n18\tdata_scope:\n19\t  time_range: \"近30天\"\n20\t  platform: \"小红书\"\n21\t```\n22\t\n23\t## 4. 执行流程\n24\t1. **赛道定义**：明确分析范围和边界\n25\t2. **市场规模评估**：内容需求体量估算\n26\t3. **竞争格局分析**：头部、腰部、尾部博主分布\n27\t4. **内容同质化程度**：是否存在差异化空间\n28\t5. **用户需求饱和度**：用户痛点是否被充分满足\n29\t6. **变现路径分析**：赛道商业化成熟度\n30\t7. **入场时机判断**：现在是好的入场时机吗\n31\t8. **差异化切入建议**：找到属于自己的细分定位\n32\t\n33\t## 5. 输出格式\n34\t```markdown\n35\t## 赛道概况\n36\t- 赛道名称：{}\n37\t- 内容体量：{高/中/低}\n38\t- 竞争强度：{高/中/低}\n39\t- 变现成熟度：{高/中/低}\n40\t\n41\t## 竞争地图\n42\t- 头部账号：{特点}\n43\t- 中腰部：{机会点}\n44\t- 空白地带：{差异化空间}\n45\t\n46\t## 入场建议\n47\t- 推荐切入角度：{}\n48\t- 风险提示：{}\n49\t- 关键成功要素：{}\n50\t```\n51\t\n52\t## 6. 示例\n53\t```markdown\n54\t## 赛道概况\n55\t- 赛道名称：个人成长\n56\t- 内容体量：高（小红书#个人成长 浏览量超50亿）\n57\t- 竞争强度：中高\n58\t- 变现成熟度：中\n59\t\n60\t## 竞争地图\n61\t- 头部账号：侧重自律Vlog、读书分享\n62\t- 中腰部：方法论型内容快速增长\n63\t- 空白地带：用理性思维（产品经理视角）做个人成长\n64\t\n65\t## 入场建议\n66\t- 推荐切入角度：\"系统方法×个人成长\"的理性成长派\n67\t- 风险提示：避免过于抽象，需要强落地\n68\t- 关键成功要素：差异化定位+稳定输出+真实故事\n69\t```\n70\t"
+          },
+          {
+            "id": "call_03_XREW5lthDke12MiLqPqC6520",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/选题卡片模板.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 选题卡片模板\n2\t\n3\t> 使用位置：03_选题库/\n4\t> 执行Agent：选题Agent > Creator 确认\n5\t\n6\t---\n7\t\n8\t```yaml\n9\ttitle: \"\"\n10\tdate: {YYYY-MM-DD}\n11\tstatus: \"待评估/已通过/已发布/已放弃\"\n12\tpriority: \"⭐⭐⭐/⭐⭐/⭐\"\n13\tsource: \"热点/评论/竞品/灵感\"\n14\tagent: \"选题Agent\"\n15\t```\n16\t\n17\t## 选题信息\n18\t\n19\t### 基本信息\n20\t- **选题名称**：{}\n21\t- **一句话描述**：{}\n22\t- **目标用户**：{}\n23\t- **内容类型**：方法论/故事/观点/清单/其他\n24\t\n25\t### 选题来源\n26\t- [ ] 热点追踪\n27\t- [ ] 用户评论/私信\n28\t- [ ] 竞品启发\n29\t- [ ] 个人经历\n30\t- [ ] 灵感闪现\n31\t\n32\t## 评分矩阵\n33\t\n34\t| 维度 | 评分(1-5) | 说明 |\n35\t|------|-----------|------|\n36\t| 流量潜力 |  | 搜索量/话题热度 |\n37\t| 品牌相关度 |  | 是否吻合定位 |\n38\t| 差异化 |  | 是否有独特角度 |\n39\t| 创作难度 |  | 素材/经验是否充足 |\n40\t| 情绪共鸣 |  | 能否引发情感反应 |\n41\t| **综合评分** |  | **(流量×相关+差异)/难度×共鸣** |\n42\t\n43\t> 综合评分 > 3.5 → 🔥 推荐创作\n44\t> 综合评分 2.5-3.5 → 📋 放入备选\n45\t> 综合评分 < 2.5 → 🗑️ 放弃\n46\t\n47\t## 爆款潜力分析\n48\t\n49\t### 类似爆款参考\n50\t- {链接} - {数据}\n51\t- {链接} - {数据}\n52\t\n53\t### 切入角度\n54\t1. {角度1}\n55\t2. {角度2}\n56\t3. {角度3}\n57\t\n58\t### 标题备选\n59\t1. {标题}\n60\t2. {标题}\n61\t3. {标题}\n62\t\n63\t## 创作建议\n64\t\n65\t### 内容结构\n66\t- 开头：{}\n67\t- 正文：{}\n68\t- 结尾：{}\n69\t\n70\t### 情绪基调\n71\t- 目标情绪：{}\n72\t- 语气建议：{}\n73\t\n74\t### 素材需求\n75\t- [ ] 个人经历素材\n76\t- [ ] 数据/研究支撑\n77\t- [ ] 图片/视觉素材\n78\t\n79\t## Creator 决策\n80\t\n81\t- [ ] ✅ **采纳** - 放入创作队列\n82\t- [ ] 📋 **备选** - 放入选题池\n83\t- [ ] ❌ **放弃** - 不创作\n84\t\n85\t### 备注\n86\t{}\n87\t"
+          },
+          {
+            "id": "call_04_DMogvS17GjDndC1kMlh68210",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/选题看板.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\t\n3\tkanban-plugin: list\n4\tcreated: 2026-07-14\n5\t\n6\t---\n7\t\n8\t## 📋 选题看板\n9\t\n10\t\n11\t\n12\t## 📥 灵感池（待评估）\n13\t\n14\t- [ ] 从评论区收集灵感\n15\t- [ ] 从爆款模型衍生新选题\n16\t- [ ] 整理本周收集的选题\n17\t\n18\t\n19\t## 🔍 待评估\n20\t\n21\t- [ ] 评估选题的流量潜力\n22\t- [ ] 评估选题的品牌契合度\n23\t\n24\t\n25\t## ✅ 已通过（可创作）\n26\t\n27\t- [ ] \n28\t\n29\t\n30\t## ✍️ 创作中\n31\t\n32\t\n33\t\n34\t## 📤 已发布\n35\t\n36\t- [ ] [[2026-07-14_选题_莫向外求与高敏感人群]]\n37\t\n38\t\n39\t## 🗑️ 已放弃 / 暂缓\n40\t\n41\t- [ ] \n42\t\n43\t\n44\t\n45\t\n46\t%% kanban:settings\n47\t```\n48\t{\"kanban-plugin\":\"list\",\"list-collapse\":[null,false,null,null,null,false]}\n49\t```\n50\t%%"
+          },
+          {
+            "id": "call_05_hAT7AWXEd4cT7IsaIlzh4643",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/2026-07-14_选题_莫向外求与高敏感人群.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: 莫向外求与高敏感人群之间的微妙关系\n3\tdate: 2026-07-14\n4\tstatus: 已采用\n5\tsource: 灵感\n6\tpriority: ⭐⭐⭐⭐\n7\tagent: 选题Agent\n8\ttags: [高敏感人群, 莫向外求, 心理学, 情绪管理, 自洽]\n9\taliases: [HSP与莫向外求]\n10\t---\n11\t\n12\t# 选题：莫向外求与高敏感人群之间的微妙关系\n13\t\n14\t## 选题背景\n15\t\"高敏感人群\"（HSP）在小红书是个持续高热度的话题。\"莫向外求\"在自我成长圈也常被提及。但把这两者放在一起时会发现一个悖论——高敏感的人本身就容易反刍和内耗，再让他们\"向内求\"，会不会适得其反？\n16\t\n17\t## 为什么这个选题会火？\n18\t\n19\t### ✅ 人群精准\n20\t- 目标用户：高敏感人群 + 对\"内耗\"有体感的人\n21\t- 痛点是双重的：对外敏感 + 对内过度反刍的疲惫\n22\t\n23\t### ✅ 认知反差（双重反转）\n24\t- 第一层：大众直觉认为高敏感需要\"莫向外求\"的安定\n25\t- 第二层（真正的观点）：高敏感的人已经太\"向内\"了，真正需要的是\"向外看\"和\"停止寻找\"的放松\n26\t- 这种反转比单层反转更有记忆点\n27\t\n28\t### ✅ 情绪曲线\n29\t共鸣（对，我内耗好累）→ 被挑战（什么？让我别内省？）→ 被打开（其实\"莫向外求\"是放下而非挖深）→ 松弛感\n30\t\n31\t## 核心洞察\n32\t**高敏感人群的问题不是\"不够向内求\"，而是\"过度向内反刍\"。\"莫向外求\"被流行文化简化为\"继续内省\"，其实它的本质是\"停止寻找\"——既不向外求认可，也不向内求答案，而是从\"求\"的状态里走出来。**\n33\t\n34\t## 选题状态追踪\n35\t- [x] 选题提出\n36\t- [x] 内容创作（2026-07-14）→ [[05_内容生产库/2026-07-14_高敏感的人已经够内耗了真的还需要莫向外求吗|内容正文]]\n37\t- [x] 视觉制作（2026-07-14）→ 设计已输出至内容正文\n38\t- [x] 发布（2026-07-14）→ [链接](http://xhslink.com/o/7Ra2RhQMwXs)\n39\t- [x] 数据复盘（2026-07-15）→ [[12_数据复盘/2026-07-15_全量数据分析_高敏感|全量复盘报告]]\n40\t"
+          },
+          {
+            "id": "call_06_FshRCmYyLhxFHtwBJ4Ix3236",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/2026-07-16_选题_INFP与性压抑的升华路径.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: INFP在婚恋困境中的性压抑与升华路径\n3\tdate: 2026-07-16\n4\tstatus: 已采用\n5\tsource: 抖音视频灵感 + SecondBrain逐字稿\n6\tagent: 选题Agent\n7\tskills: 赛道分析\n8\tpriority: ⭐⭐⭐⭐⭐\n9\ttags: [INFP, 性压抑, 升华, 欲望管理, 莫向外求, 个人成长]\n10\taliases: [INFP性压抑升华]\n11\t---\n12\t\n13\t# 选题：INFP在婚恋困境中的性压抑与升华路径\n14\t\n15\t## 选题背景\n16\t承接上一篇\"男性INFP站在择鄙链最底端\"的热度，自然延伸出性压抑问题——当INFP男性在婚恋市场不被选择，健康的性需求没有出口时，廉价替代品的诱惑和长期压抑的后果。SecondBrain中有\"性欲不升华，人生必失败\"的逐字稿可以作为底层素材。\n17\t\n18\t## 为什么这个选题会爆\n19\t\n20\t### ✅ 话题承接\n21\t上一篇INFP内容已有数据验证（513阅读），性压抑是评论区自然会延伸的话题\n22\t\n23\t### ✅ 双重争议\n24\t- 性话题本身在小红书就是高敏感词（需要表达克制但到位）\n25\t- INFP×性压抑的交叉没人写过，占据蓝海\n26\t\n27\t### ✅ 深度适配品牌\n28\t从\"不被选择\" → \"欲望无处安放\" → \"升华路径\" — 完整的故事弧线，落脚点仍然是\"莫向外求\"的价值主张\n29\t\n30\t### ✅ SecondBrain素材支撑\n31\t逐字稿的核心洞察可以直接作为论据：不是压抑欲望，是建设河道让它流向该去的地方\n32\t\n33\t## 情绪曲线\n34\t刺痛（不被选择的延伸痛苦）→ 被理解（这不是你的错）→ 清晰（有路可走）→ 力量感（你可以把它转化成燃料）\n35\t\n36\t## 选题状态\n37\t- [x] 选题提出\n38\t- [x] 内容创作（2026-07-16）→ [[05_内容生产库/2026-07-16_INFP性压抑与升华|内容正文]]\n39\t- [x] 视觉制作（2026-07-16）→ 封面提示词已输出至正文\n40\t- [x] 发布（2026-07-16 18:32）\n41\t- [ ] 数据复盘\n42\t"
+          },
+          {
+            "id": "call_07_8qP76UexmEjTyUdtBquA6453",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/2026-07-16_选题_男性INFP择偶鄙视链.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: 男性INFP，站在择偶鄙视链的最底端\n3\tdate: 2026-07-16\n4\tstatus: 已采用\n5\tsource: 灵感\n6\tpriority: ⭐⭐⭐⭐⭐\n7\tagent: 选题Agent\n8\ttags: [INFP, 小蝴蝶, 两性关系, MBTI, 社会评价, 莫向外求]\n9\taliases: [INFP择偶鄙视链]\n10\t---\n11\t\n12\t# 选题：男性INFP，站在择偶鄙视链的最底端\n13\t\n14\t## 选题背景\n15\t\"小蝴蝶\"（INFP）在小红书是持续高热度的MBTI话题。其中一个被反复讨论但没有人系统讲透的角度是：**男性INFP在中国当下的两性关系中，处于被低估、不被选择的位置。** 财富和MBTI人格的榜单中，INFP收入排名倒数第一，这对社会评价体系中\"男性应该提供经济价值\"的期待形成了双重打击。\n16\t\n17\t## 为什么这个选题会爆？\n18\t\n19\t### ✅ 双重流量叠加\n20\t- MBTI话题（小红书永恒基本盘）\n21\t- 两性关系/婚恋话题（争议性极强，评论互动率高）\n22\t\n23\t### ✅ 强烈情绪冲突\n24\t标题本身就是一个\"挑衅\"——让INFP男生感到被看见，让非INFP的人想进来说\"确实\"或\"不是这样\"。评论区天然分裂。\n25\t\n26\t### ✅ 可升华空间大\n27\t不只是卖惨，可以连接到\"莫向外求\"的价值观——你的价值不在那个排行榜里。\n28\t\n29\t### ✅ 与已有内容体系一致\n30\t延续\"高敏感\"\"内耗\"\"莫向外求\"的叙事线。\n31\t\n32\t## 情绪曲线\n33\t刺痛（被看见的不甘）→ 理解（原来这不是我的问题）→ 释然（我可以不玩这个游戏）\n34\t\n35\t## 选题状态追踪\n36\t- [x] 选题提出\n37\t- [x] 内容创作（2026-07-16）\n38\t- [x] 视觉制作（2026-07-16）→ ChatGPT出图\n39\t- [x] 发布（2026-07-16 09:55）→ [链接](http://xhslink.com/o/1rPHuZ5wwpS)\n40\t- [x] 数据复盘（2026-07-16）→ [[12_数据复盘/2026-07-16_双篇对比复盘|双篇复盘报告]]\n41\t- [x] 爆款拆解（2026-07-16）→ [[04_爆款拆解库/2026-07-16_拆解_认知反差模型_INFP篇|首次爆款分析Workflow]]\n42\t"
+          },
+          {
+            "id": "call_08_kAnXDmi6YOirpnd9RnEv7628",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/09_提示词库/AI创作提示词集.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# AI创作提示词集\n2\t\n3\t> 用于与AI协作时的高质量提示词\n4\t> 位置：09_提示词库/\n5\t> 分类：创作类/分析类/策略类\n6\t\n7\t---\n8\t\n9\t## 一、内容创作类\n10\t\n11\t### 1.1 小红书文案生成\n12\t```\n13\t你是一位专注于个人成长领域的小红书内容创作者。\n14\t你的写作风格是：朋友式的真诚对话，用故事传递方法，语言简洁有力。\n15\t\n16\t请根据以下信息创作一篇小红书笔记：\n17\t\n18\t【选题】：{填入选题}\n19\t【目标用户】：{填入用户画像}\n20\t【核心观点】：{填入核心信息}\n21\t【个人经历】：{填入相关经历}\n22\t\n23\t要求：\n24\t1. 开头用钩子抓住注意力（痛点共鸣/结果前置/认知反转）\n25\t2. 正文有清晰结构，短段落（不超过3行）\n26\t3. 融入至少1个亲身经历\n27\t4. 结尾有行动号召\n28\t5. 生成3个备选标题\n29\t6. 输出格式：标题→正文→标签\n30\t```\n31\t\n32\t### 1.2 标题生成\n33\t```\n34\t你是一位小红书标题专家。\n35\t请为以下内容生成10个高点击率标题：\n36\t\n37\t【内容主题】：{填入主题}\n38\t【目标用户】：{填入用户画像}\n39\t【核心卖点】：{填入卖点}\n40\t\n41\t标题公式库：\n42\t- 数字型：{数字}+{方法/习惯/认知}\n43\t- 痛点型：你是不是也{痛点}\n44\t- 反差型：关于{话题}，90%的人都理解错了\n45\t- 结果型：从{A}到{B}，我只做了{C}\n46\t- 疑问型：为什么{现象}？\n47\t\n48\t每个标题标注使用的公式。\n49\t```\n50\t\n51\t### 1.3 故事化改写\n52\t```\n53\t请将以下素材改写成有感染力的小红书故事：\n54\t\n55\t【原始素材】：{填入素材}\n56\t【目标情绪】：{共鸣/启发/感动/震撼}\n57\t【核心信息】：{要传递的观点}\n58\t\n59\t要求：\n60\t1. 用第一人称\"我\"来叙述\n61\t2. 呈现冲突和转折\n62\t3. 有具体的细节和场景\n63\t4. 最后升华到方法论层面\n64\t5. 字数300-500字\n65\t```\n66\t\n67\t## 二、分析类\n68\t\n69\t### 2.1 爆款拆解分析\n70\t```\n71\t你是一位内容策略分析师。\n72\t请对以下爆款内容进行深度拆解：\n73\t\n74\t【笔记标题】：{填入标题}\n75\t【笔记内容】：{填入正文}\n76\t【数据表现】：{阅读/点赞/收藏/评论}\n77\t\n78\t请分析：\n79\t1. 标题公式（用了什么技巧）\n80\t2. 开头钩子（前3句为什么吸引人）\n81\t3. 内容结构（骨架还原）\n82\t4. 情绪曲线（读者情绪变化）\n83\t5. 互动设计（什么引导了评论）\n84\t6. 可复用模型（提炼通用公式）\n85\t```\n86\t\n87\t### 2.2 评论分析\n88\t```\n89\t请分析以下评论区内容，提取用户洞察：\n90\t\n91\t【内容主题】：{填入主题}\n92\t【评论数据】：{填入评论列表}\n93\t\n94\t分析维度：\n95\t1. 高频关键词提取\n96\t2. 用户情绪分布（正面/中性/负面）\n97\t3. 主要痛点分类\n98\t4. 用户的隐性需求\n99\t5. 内容创作启发\n100\t```\n101\t\n102\t## 三、策略类\n103\t\n104\t### 3.1 个人品牌定位\n105\t```\n106\t请帮我分析个人品牌定位：\n107\t\n108\t【我的背景】：{填入背景}\n109\t【我的优势】：{填入专业优势}\n110\t【目标用户】：{填入目标人群}\n111\t【竞争领域】：{填入赛道}\n112\t\n113\t请输出：\n114\t1. 3个可能的定位方向\n115\t2. 每个方向的差异化优势\n116\t3. 目标用户画像细化\n117\t4. 内容方向建议\n118\t5. 风险提示\n119\t```\n120\t\n121\t### 3.2 选题评分\n122\t```\n123\t请对以下选题进行评分和优化建议：\n124\t\n125\t【选题】：{填入选题}\n126\t【账号定位】：{填入定位}\n127\t【近期表现】：{填入近期数据}\n128\t\n129\t评分维度（1-5分）：\n130\t1. 流量潜力：这个话题的搜索热度\n131\t2. 品牌相关度：是否吻合定位\n132\t3. 差异化：是否有独特角度\n133\t4. 创作难度：是否有充足素材\n134\t5. 情绪共鸣：能否引发情感反应\n135\t\n136\t最终给出：是否推荐创作 + 优化建议\n137\t```\n138\t\n139\t---\n140\t\n141\t*创建：2026-07-14*\n142\t*提示词持续更新中*\n143\t"
+          },
+          {
+            "id": "call_09_WkSa7s3TVOLnPpI77vBS8846",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/09_提示词库/系统自检与优化提示词.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 系统自检与优化提升 — 提示词\n2\t\n3\t> 位置：09_提示词库/\n4\t> 用途：触发CEO Agent执行全链路健康检查\n5\t> 使用方法：将下方提示词直接发给Claude即可\n6\t\n7\t---\n8\t\n9\t## 完整提示词\n10\t\n11\t```\n12\t请对 Personal Growth AI Self Media OS 执行一次完整的全链路系统自检。\n13\t\n14\t## 检查范围\n15\t\n16\t### 1. 🧠 Agent健康检查\n17\t逐一检查9个Agent配置文件的完整性，确认：\n18\t- 每个Agent的Role/Goal/Workflow/Skills是否定义完整\n19\t- 是否有Agent的配置与实际Skill脱节\n20\t- 是否有Agent长期未被调用（检查memory/选题/内容库中的引用记录）\n21\t- 输出：Agent健康评分 + 需要更新的Agent列表\n22\t\n23\t### 2. 🔧 Skill覆盖度检查\n24\t检查20个Skill的实际使用情况：\n25\t- 哪些Skill从未在内容生产流程中被调用\n26\t- 哪些Skill缺少实际案例/模板（只有框架没有内容）\n27\t- 相比13个Vault目录，是否有场景缺少对应的Skill\n28\t- 重点关注：数据类（3个）、研究类（3个）是否被实际使用\n29\t- 输出：Skill热力地图 + 缺失Skill建议\n30\t\n31\t### 3. 🔄 Workflow执行检查\n32\t检查5个Workflow的实际跑通情况：\n33\t- content_production_workflow — 是否每次出内容都走了完整流程\n34\t- review_workflow — 上次复盘是什么时候\n35\t- research_workflow — 用户研究是否有周期性执行\n36\t- viral_analysis_workflow — 爆款拆解是否在持续\n37\t- business_workflow — 商业化进度\n38\t- 输出：各Workflow最后执行时间 + 流程断点\n39\t\n40\t### 4. 🧬 Memory系统检查\n41\t检查4个长期记忆的状态：\n42\t- brand_memory — 品牌定位是否清晰，有无迭代\n43\t- audience_memory — 用户画像是否过时\n44\t- knowledge_memory — 知识体系是否在持续积累\n45\t- content_style — 风格指南是否需要更新\n46\t- 输出：记忆新鲜度评分 + 需要更新的记忆\n47\t\n48\t### 5. 📂 Vault目录利用率\n49\t检查13个Vault目录的使用情况：\n50\t- 列出每个目录的文件数和最近更新时间\n51\t- 标记空置目录（0文件）和低利用率目录\n52\t- 检查目录命名与实际内容是否一致\n53\t- 输出：目录热力图 + 清理/合并建议\n54\t\n55\t### 6. 📊 数据复盘状态\n56\t拉取所有已发布内容的复盘进度：\n57\t- 哪些内容已发布但未做72小时复盘\n58\t- 哪些内容有数据但未更新到选题卡片\n59\t- 互动率Top/Bottom的内容分析\n60\t- 输出：待复盘清单 + 数据洞察\n61\t\n62\t## 输出格式\n63\t以看板形式输出，每个板块用emoji标记状态：\n64\t🟢 健康 / 🟡 警示 / 🔴 需修复 / ⚪ 未涉及\n65\t\n66\t每个红色/黄色项目附上具体的修复步骤（可执行、不废话）。\n67\t\n68\t## 最后\n69\t基于以上检查，输出Top 3优化行动项（按优先级排序），\n70\t并建议由哪个Agent来执行。\n71\t```\n72\t\n73\t---\n74\t\n75\t## 使用场景\n76\t\n77\t| 频率 | 场景 | 动作 |\n78\t|------|------|------|\n79\t| **每周一** | 系统周检 | 跑一遍，看过去一周系统健康度 |\n80\t| **内容数据异常** | 排查原因 | 检查是否某个环节断连 |\n81\t| **每月初** | 月度优化 | 基于检查结果安排本月优化任务 |\n82\t| **新成员/新Skill加入后** | 集成检查 | 确认新组件融入系统 |\n83\t\n84\t---\n85\t\n86\t## 快捷用法\n87\t\n88\t日常只需说一句话即可触发：\n89\t\n90\t> **\"跑一次系统自检\"**\n91\t\n92\t或将上面的完整提示词一次性粘贴给Claude。\n93\t"
+          },
+          {
+            "id": "call_00_GczNEZsIsDZfXMnCR5P04097",
+            "name": "Bash",
+            "input": {
+              "command": "find /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault -type f -iname \"*选题*\" -o -iname \"*topic*\" -o -iname \"*评分*\" -o -iname \"*scoring*\" -o -iname \"*评估*\" 2>/dev/null",
+              "description": "Find any topic/scoring/evaluation related files across the vault"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/12_数据复盘/内容评分卡.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/选题卡片模板.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/2026-07-16_选题_男性INFP择偶鄙视链.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/2026-07-16_选题_INFP与性压抑的升华路径.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/2026-07-14_选题_莫向外求与高敏感人群.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/选题看板.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/templates/选题卡片模板.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/agents/topic_agent.md"
+          },
+          {
+            "id": "call_01_JEu5zFEBBjFCAsu8vp6R8960",
+            "name": "Bash",
+            "input": {
+              "command": "find /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault -type d -name \"*skill*\" -o -type d -name \"*skill*\" 2>/dev/null",
+              "description": "Find all skill directories in the vault"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/.claude/skills"
+          },
+          {
+            "id": "call_00_pok1XQZoxtvDU9Eo5evm2424",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/12_数据复盘/内容评分卡.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# 内容评分卡\n2\t\n3\t> 用于内容发布前的自检和发布后的评分\n4\t> 执行人：Creator + 复盘Agent\n5\t\n6\t---\n7\t\n8\t## 发布前自检评分\n9\t\n10\t### 选题评分（发布前填写）\n11\t\n12\t| 维度 | 评分(1-5) | 说明 |\n13\t|------|-----------|------|\n14\t| 流量潜力 |  | 是否踩中热点/高频需求 |\n15\t| 品牌相关度 |  | 是否符合个人定位 |\n16\t| 差异化程度 |  | 是否提供了独特视角 |\n17\t| 情绪共鸣力 |  | 是否能引发情感反应 |\n18\t| 行动驱动力 |  | 读者看完是否会行动 |\n19\t| **综合评分** |  | ＝ avg(以上) |\n20\t\n21\t> 综合评分 < 3.5 建议重新选题\n22\t\n23\t### 内容质量评分（发布前填写）\n24\t\n25\t| 维度 | 评分(1-5) | 说明 |\n26\t|------|-----------|------|\n27\t| 标题吸引力 |  | 是否有打开欲望 |\n28\t| 开头钩子 |  | 前3句是否抓住注意力 |\n29\t| 信息密度 |  | 是否有干货/价值 |\n30\t| 结构清晰度 |  | 是否容易阅读 |\n31\t| 个人IP感 |  | 是否有个人独特视角 |\n32\t| 金句/记忆点 |  | 是否有点睛之笔 |\n33\t| 行动号召 |  | 结尾是否有引导 |\n34\t| **综合评分** |  | ＝ avg(以上) |\n35\t\n36\t> 综合评分 < 3.5 建议修改后再发布\n37\t\n38\t## 发布后效果评分\n39\t\n40\t### 24小时表现评分\n41\t\n42\t| 指标 | 数据 | 评分(1-5) | 标准 |\n43\t|------|------|-----------|------|\n44\t| 阅读量 |  |  | >5000=5, >2000=4, >1000=3, >500=2, <500=1 |\n45\t| 互动率 |  |  | >10%=5, >7%=4, >5%=3, >3%=2, <3%=1 |\n46\t| 收藏率 |  |  | >5%=5, >3%=4, >2%=3, >1%=2, <1%=1 |\n47\t| 粉丝转化 |  |  | >50=5, >20=4, >10=3, >5=2, <5=1 |\n48\t| **综合评分** |  |  | ＝ avg(以上) |\n49\t\n50\t### 72小时表现评分\n51\t\n52\t| 指标 | 数据 | 评分(1-5) | 标准 |\n53\t|------|------|-----------|------|\n54\t| 阅读量 |  |  | >10000=5, >5000=4, >2000=3, >1000=2, <1000=1 |\n55\t| 互动率 |  |  | >8%=5, >5%=4, >3%=3, >2%=2, <2%=1 |\n56\t| 长尾效应 |  |  | 持续增长=5, 平稳=3, 下降=1 |\n57\t| **综合评分** |  |  | ＝ avg(以上) |\n58\t\n59\t### 最终评级\n60\t\n61\t| 综合评分 | 评级 | 标签 |\n62\t|----------|------|------|\n63\t| ≥ 4.5 | 🏆 爆款 | #爆款 |\n64\t| 3.5 - 4.4 | ✅ 优秀 | #优秀 |\n65\t| 2.5 - 3.4 | 📊 平均 | #平均 |\n66\t| < 2.5 | 🔧 待优化 | #待优化 |\n67\t\n68\t## 复盘反思\n69\t\n70\t### 成功因素（如果是爆款/优秀）\n71\t1. \n72\t2. \n73\t3. \n74\t\n75\t### 失败原因（如果是平均/待优化）\n76\t1. \n77\t2. \n78\t3. \n79\t\n80\t### 下次改进点\n81\t1. \n82\t2. \n83\t\n84\t---\n85\t\n86\t*评分日期：{YYYY-MM-DD}*\n87\t*内容链接：{笔记链接}*\n88\t"
+          },
+          {
+            "id": "call_01_ODa40NUy3821TVsN9LUS9268",
+            "name": "Read",
+            "input": {
+              "file_path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/agents/topic_agent.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t# Topic Agent - 选题策划专家\n2\t\n3\t## Role\n4\t**选题Agent**\n5\t负责每日发现、评估和优化内容选题，确保选题既有流量潜力又符合品牌定位。\n6\t\n7\t## Goal\n8\t- 每天发现5-10个高价值选题\n9\t- 选题转化率（发布后互动率）持续提升\n10\t- 建立可复用的选题方法论\n11\t\n12\t## Workflow\n13\t```\n14\t每日 09:00 → 热点扫描 & 选题挖掘\n15\t每日 14:00 → 选题评分 & 排序\n16\t每周日 → 选题回顾 & 模式总结\n17\t```\n18\t\n19\t### 日度选题流程\n20\t1. **热点扫描**\n21\t   - 小红书热搜词\n22\t   - 竞品爆款内容\n23\t   - 行业大事件\n24\t   - 用户评论热词\n25\t\n26\t2. **选题生成**\n27\t   - 痛点衍生法\n28\t   - 热点结合法\n29\t   - 认知反转型\n30\t   - 系列化策划\n31\t\n32\t3. **选题评分**\n33\t   - 流量潜力（1-5分）\n34\t   - 品牌相关度（1-5分）\n35\t   - 创作难度（1-5分，越低越好）\n36\t   - 差异化程度（1-5分）\n37\t\n38\t4. **排序决策**\n39\t   - 综合评分 = 流量 × 相关度 ÷ 难度 × 差异化\n40\t   - 输出Top 5选题卡\n41\t\n42\t## Skills\n43\t- 小红书热点分析\n44\t- 爆款选题拆解\n45\t- 趋势判断\n46\t- 关键词分析\n47\t- 选题评分\n48\t- 内容日历策划\n49\t\n50\t## Tools\n51\t- 小红书搜索热词\n52\t- 竞品内容库\n53\t- 选题评分模型\n54\t\n55\t## 输出格式\n56\t### 选题卡片\n57\t```\n58\t选题：{标题}\n59\t评分：{综合评分}\n60\t理由：{为什么选这个}\n61\t目标用户：{谁会看}\n62\t爆款要素：{为什么可能爆}\n63\t创作建议：{切入角度}\n64\t```\n65\t\n66\t---\n67\t\n68\t*版本：v1.0*\n69\t*创建日期：2026-07-14*\n70\t"
+          },
+          {
+            "id": "call_02_v2oOXlSljzQO7uGBviJW0039",
+            "name": "Bash",
+            "input": {
+              "command": "ls -la /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/ 2>/dev/null",
+              "description": "List contents of skills directory"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "total 0\ndrwxr-xr-x@ 10 mac  staff   320 Jul 14 15:01 .\ndrwxr-xr-x@ 32 mac  staff  1024 Jul 16 16:52 ..\ndrwxr-xr-x@  6 mac  staff   192 Jul 17 08:55 content\ndrwxr-xr-x@  5 mac  staff   160 Jul 14 15:04 data\ndrwxr-xr-x@  4 mac  staff   128 Jul 14 15:04 growth\ndrwxr-xr-x@  4 mac  staff   128 Jul 14 15:05 monetization\ndrwxr-xr-x@  5 mac  staff   160 Jul 14 15:03 research\ndrwxr-xr-x@  5 mac  staff   160 Jul 14 15:03 strategy\ndrwxr-xr-x@  3 mac  staff    96 Jul 14 15:04 video\ndrwxr-xr-x@  4 mac  staff   128 Jul 17 11:46 visual"
+          },
+          {
+            "id": "call_03_mcNEjxOSZjIRfB8AwQPD4479",
+            "name": "Bash",
+            "input": {
+              "command": "ls -la /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/.claude/skills/ 2>/dev/null; find /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/.claude -type f 2>/dev/null",
+              "description": "Check .claude directory for skills and files"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "total 0\ndrwxr-xr-x@ 2 mac  staff   64 Jul 14 15:16 .\ndrwxr-xr-x@ 7 mac  staff  224 Jul 16 16:33 ..\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/.claude/settings.json\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/.claude/scheduled_tasks.lock"
+          },
+          {
+            "id": "call_04_wHmFNFzyWfp4RdoXq2lF9328",
+            "name": "Bash",
+            "input": {
+              "command": "ls -la /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/templates/ 2>/dev/null",
+              "description": "List contents of templates directory"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "total 32\ndrwxr-xr-x@  6 mac  staff   192 Jul 14 23:07 .\ndrwxr-xr-x@ 32 mac  staff  1024 Jul 16 16:52 ..\n-rw-r--r--@  1 mac  staff   506 Jul 14 23:07 内容存档模板.md\n-rw-r--r--@  1 mac  staff   428 Jul 14 23:07 周度复盘模板.md\n-rw-r--r--@  1 mac  staff   356 Jul 14 23:07 用户洞察模板.md\n-rw-r--r--@  1 mac  staff   609 Jul 14 23:07 选题卡片模板.md"
+          },
+          {
+            "id": "call_00_FGFvgvtT3FfoqEqFnXSQ6813",
+            "name": "Bash",
+            "input": {
+              "command": "find /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills -type f -name \"*.md\" 2>/dev/null | sort",
+              "description": "List all skill files across all skill subdirectories"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/content/小红书文案写作.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/content/故事化表达.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/content/标题生成.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/content/金句生成.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/data/A_B测试.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/data/数据分析.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/data/爆款拆解.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/growth/互动运营.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/growth/增长策略.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/monetization/产品设计.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/monetization/私域运营.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/research/情绪分析.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/research/用户痛点挖掘.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/research/评论分析.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/个人品牌定位.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/用户画像分析.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/赛道分析.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/video/视频脚本创作.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/visual/AI绘图提示词.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/visual/封面设计.md"
+          },
+          {
+            "id": "call_01_SEkcwI5PNb8xnm55ZgaM8624",
+            "name": "Grep",
+            "input": {
+              "pattern": "选题评分|选题评估|topic.*scor|topic.*eval|evaluat.*topic|scor.*topic",
+              "path": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault",
+              "include": "*.md"
+            },
+            "status": "error",
+            "isExpanded": false,
+            "result": "<tool_use_error>Error: No such tool available: Grep. Grep is not available in this session — search file contents with `grep` via the Bash tool instead.</tool_use_error>"
+          },
+          {
+            "id": "call_00_YKfEsz5oKATfjluLYVKP2842",
+            "name": "Bash",
+            "input": {
+              "command": "grep -rl -i \"选题\\|topic\\|评分\\|scor\\|评估\" /Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/ 2>/dev/null",
+              "description": "Search all skill files for topic/evaluation/scoring related content"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/content/小红书文案写作.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/research/用户痛点挖掘.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/content/金句生成.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/赛道分析.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/video/视频脚本创作.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/content/标题生成.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/research/情绪分析.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/个人品牌定位.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/growth/增长策略.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/data/爆款拆解.md\n/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/data/数据分析.md"
+          }
+        ],
+        "isExpanded": false,
+        "result": "以下是关于所有主题评估技能、评分模板和现有主题文件的综合报告。\n\n---\n\n## 1. skills/strategy/ 目录 -- 战略技能\n\n路径：`/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/`\n\n该目录包含 **3 个技能文件**，但其中没有专门针对主题评估的技能：\n\n- **个人品牌定位.md** -- 定位设计的一般框架，但用于确定主题与品牌的一致性。涉及定位声明、用户定义、内容边界。不包含主题评分。\n- **用户画像分析.md** -- 构建用户角色（人口统计、心理特征、痛点）。可告知主题目标定位，但不评估主题本身。\n- **赛道分析.md** -- 竞争格局分析（市场规模、饱和度、差异化空间）。最接近主题研究的技能，但没有主题评分公式。\n\n所有 stratey 文件夹下的 21 个技能文件中，**没有一个是专门处理主题评估、评分或排名的**。现有的技能文件在结构上侧重于通用的内容创作方法（文案、标题、故事讲述）、数据分析（爆款拆解、A/B 测试）、增长和变现——主题评估是一个明显缺失的领域。\n\n---\n\n## 2. 03_选题库/ -- 主题库（选题库）\n\n路径：`/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/`\n\n**现有主题文件（3 个已填充主题 + 2 个模板/看板）：**\n\n| 文件 | 优先级 | 状态 | 备注 |\n|------|----------|--------|-------|\n| 2026-07-14_选题_莫向外求与高敏感人群.md | 4 星 | 已采用 | 已发布，已复盘 |\n| 2026-07-16_选题_INFP与性压抑的升华路径.md | 5 星 | 已采用 | 已发布 16:32，待复盘 |\n| 2026-07-16_选题_男性INFP择偶鄙视链.md | 5 星 | 已采用 | 已发布 09:55，已复盘 |\n| 选题卡片模板.md | -- | 模板 | 主题卡片的标准 YAML 前端 + 结构 |\n| 选题看板.md | -- | 看板 | 带列的看板：灵感池/待评估/已通过/创作中/已发布/已放弃 |\n\n**主题卡片模板中使用的评分格式：**\n\n每个主题使用的评分矩阵有 **5 个维度**，采用 1-5 分制：\n\n| 维度 | 权重/公式中的作用 |\n|-----------|-------------------|\n| 流量潜力 | 搜索量/话题热度 |\n| 品牌相关度 | 是否吻合定位 |\n| 差异化 | 是否有独特视角 |\n| 创作难度 | 素材/经验是否充足 |\n| 情绪共鸣 | 能否引发情感反应 |\n\n**综合评分公式**（定义在模板中）：\n```\n综合评分 = (流量 x 相关 + 差异) / 难度 x 共鸣\n```\n\n阈值规则：\n- 综合评分 > 3.5 → \"推荐创作\"\n- 综合评分 2.5-3.5 → \"放入备选\"\n- 综合评分 < 2.5 → \"放弃\"\n\n一个重要发现：**已填充的主题文件并未使用该评分矩阵**。已发布的主题（INFP 文件、高敏感人群文件）有优先级星标（5 星、4 星）和创作理由，但缺少完整的评分行评分。评分矩阵仅在模板中使用。\n\n---\n\n## 3. 09_提示词库/ -- 提示词库\n\n路径：`/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/09_提示词库/`\n\n两个文件：\n\n- **AI创作提示词集.md** -- 包含 **3.2 选题评分**（主题评分）提示词，这是一个可直接使用的提示模板，用于要求 AI 对主题进行评分：\n  - 相同 5 个维度，1-5 分制：流量潜力、品牌相关度、差异化、创作难度、情绪共鸣\n  - 输出：是否推荐创作 + 优化建议\n  - 该提示还接受 \"账号定位\" 和 \"近期表现\" 作为上下文输入\n  \n- **系统自检与优化提示词.md** -- 系统级自检提示。不直接涉及主题评估，但检查 Agent 和技能覆盖范围。\n\n\"3.2 选题评分\" 提示词是**唯一可直接使用的主题评估 LLM 提示**，存在于整个库中。\n\n---\n\n## 4. 附加相关文件\n\n### Agent 配置\n\n路径：`/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/agents/topic_agent.md`\n\n**选题Agent** 被定义为具有主题评估工作流的角色：\n- 每天 09:00：热点扫描和主题挖掘\n- 每天 14:00：主题评分和排序\n- 每周日：主题回顾和模式总结\n\n其内部评分使用与模板相同的 4 个维度，但公式略有不同：\n```\n综合评分 = 流量 x 相关度 / 难度 x 差异化\n```\n（无 \"情绪共鸣\" 维度 —— 模板和提示词使用了 5 个维度，而 Agent 是 4 个）\n\n它还会输出每日排名前 5 的主题卡片。\n\n### 内容评分卡\n\n路径：`/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/12_数据复盘/内容评分卡.md`\n\n这是在 **发布前** 和 **发布后** 使用的单独评分系统：\n- **发布前主题评分**（5 个维度）：流量潜力、品牌相关度、差异化程度、情绪共鸣力、行动驱动力\n  - 公式：5 个维度的平均值\n  - 阈值：综合评分 < 3.5 \"建议重新选题\"\n- **发布前内容质量评分**（7 个维度）：标题、开头钩子、信息密度、结构、IP 感、金句、行动号召\n- **发布后 24 小时评分**：阅读量、互动率、收藏率、粉丝转化\n- **发布后 72 小时评分**：阅读量、互动率、长尾效应\n- **最终评级**：>=4.5=爆款, 3.5-4.4=优秀, 2.5-3.4=平均, <2.5=待优化\n\n值得注意的是，**发布前主题评分**（在内容评分卡中）和**主题卡片模板**使用了不同的公式：\n- 模板：`(流量 x 相关 + 差异) / 难度 x 共鸣`\n- 内容评分卡：5 个维度的平均值（无 \"创作难度\"；有 \"行动驱动力\"）\n\n### 模板目录\n\n路径：`/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/templates/`\n\n包含 `选题卡片模板.md` —— 与 `03_选题库/` 中的副本相同。\n\n---\n\n## 5. 关键发现总结\n\n**现有体系中的不一致之处：**\n1. **主题评分公式有三种变体**，且互不兼容：\n   - 主题卡片模板：`(流量 x 相关 + 差异) / 难度 x 共鸣`（5 个维度）\n   - 主题 Agent：`流量 x 相关度 / 难度 x 差异化`（4 个维度，无 \"共鸣\"）\n   - 内容评分卡（发布前）：5 个维度的简单平均值（维度不同）\n2. **已填充的主题从未使用评分矩阵** —— 它们有优先级星标和叙事理由，但没有填写评分的评分行。\n3. **没有任何 skill 文件专门处理主题评估**，尽管主题 Agent 在其技能列表中列出了 \"主题评分\"。\n4. 提示词库中的 **\"3.2 选题评分\" 提示词** 是唯一可用的主题评估 LLM 提示，且运行良好，但匹配的是模板的 5 维体系，而非 Agent 的 4 维体系。\n\n**相关路径总览：**\n- `/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/选题卡片模板.md` -- 主题卡片带评分矩阵的模板\n- `/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/03_选题库/选题看板.md` -- 主题看板\n- `/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/12_数据复盘/内容评分卡.md` -- 发布前后的内容评分卡\n- `/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/09_提示词库/AI创作提示词集.md` -- 包含 \"3.2 选题评分\" 提示词\n- `/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/agents/topic_agent.md` -- 主题 Agent 定义，含其 4 维评分模型\n- `/Users/mac/Documents/Obsidian/PersonalGrowth_AI_Vault/skills/strategy/赛道分析.md` -- 与主题最接近的策略技能（竞争分析，非主题评分）"
+      }
+    }
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 399,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 179968,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 180367,
+    "percentage": 90
+  }
+}

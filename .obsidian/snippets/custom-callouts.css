@@ -1,0 +1,84 @@
+/*
+ * 自定义 Callout 样式
+ * 用于在笔记中创建精美的提示框
+ */
+
+/* 成功/完成 callout */
+.callout[data-callout="done"],
+.callout[data-callout="success"] {
+  --callout-color: 183, 110, 74;
+  --callout-icon: lucide-check-check;
+}
+
+/* 灵感 callout */
+.callout[data-callout="idea"],
+.callout[data-callout="spark"] {
+  --callout-color: 201, 169, 110;
+  --callout-icon: lucide-lightbulb;
+}
+
+/* 提醒 callout */
+.callout[data-callout="reminder"] {
+  --callout-color: 200, 100, 80;
+  --callout-icon: lucide-bell;
+}
+
+/* 数据 callout */
+.callout[data-callout="data"] {
+  --callout-color: 80, 140, 180;
+  --callout-icon: lucide-bar-chart-3;
+}
+
+/* 引号 callout - 金句 */
+.callout[data-callout="quote"] {
+  --callout-color: 183, 110, 74;
+  --callout-icon: lucide-quote;
+  font-style: italic;
+}
+
+/* 工作流 callout */
+.callout[data-callout="workflow"] {
+  --callout-color: 100, 160, 120;
+  --callout-icon: lucide-route;
+}
+
+/* Tip 增强 */
+.callout[data-callout="tip"] {
+  --callout-color: 201, 169, 110;
+}
+
+/* 笔记内部标题美化 */
+.markdown-preview-view h1,
+.markdown-source-view h1 {
+  color: var(--brand-primary, #B76E4A) !important;
+}
+
+.markdown-preview-view h2,
+.markdown-source-view h2 {
+  border-bottom: 1px solid var(--brand-secondary, #F5F0E8);
+  padding-bottom: 6px;
+}
+
+/* 表格美化 */
+.markdown-preview-view table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.markdown-preview-view th {
+  background-color: var(--brand-secondary, #F5F0E8);
+  color: var(--brand-accent, #3D3D3D);
+  font-weight: 600;
+  padding: 8px 12px;
+  border: 1px solid #e0d8d0;
+}
+
+.markdown-preview-view td {
+  padding: 6px 12px;
+  border: 1px solid #e8e0d8;
+}
+
+.markdown-preview-view tr:nth-child(even) {
+  background-color: #FAF8F6;
+}

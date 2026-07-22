@@ -1,0 +1,26 @@
+{
+  "baseColor": 24,
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "00_Inbox",
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "newFileLocation": "current",
+  "newLinkFormat": "relative",
+  "promptDelete": false,
+  "readableLineLength": true,
+  "showFrontmatter": true,
+  "showIndentGuide": true,
+  "showLineNumber": false,
+  "strictLineBreaks": true,
+  "tabSize": 2,
+  "useTab": false,
+  "propertiesInDocument": "visible",
+  "foldHeading": true,
+  "foldIndent": true,
+  "newFileFolderPath": "00_Inbox",
+  "trashOption": "local",
+  "userIgnoreFilters": [
+    "node_modules/",
+    ".git/"
+  ]
+}
