@@ -18,3 +18,12 @@ render/
 
 # 插件敏感数据（含 GitHub token，禁止入库）
 .obsidian/plugins/githobs/data.json
+
+# Node modules
+node_modules/
+
+# MCP token
+.claude/mcp.json
+
+# Session logs
+.claudian/

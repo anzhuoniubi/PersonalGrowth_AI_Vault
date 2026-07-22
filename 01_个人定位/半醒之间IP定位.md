@@ -204,7 +204,7 @@ AI时代个人品牌实践者
 - Memory: [[memory/brand_memory]] | [[memory/audience_memory]] | [[memory/content_style]] | [[memory/knowledge_memory]]
 - 定位来源：[[我现在不是缺方向，而是已经出现了方向，需要把它系统化。]]
 - 用户研究：[[02_用户研究/核心用户画像]]
-- 90天实验：[[10_数据复盘/90天实验计划]]
+- 90天实验：[[08_数据复盘/90天实验计划]]
 
 ---
 
