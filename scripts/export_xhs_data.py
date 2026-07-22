@@ -35,7 +35,7 @@ def main():
         # ① 打开创作者中心
         step(pg, 1, "打开创作者中心",
              lambda: pg.goto("https://creator.xiaohongshu.com/", timeout=30000))
-        pg.wait_for_load_state("networkidle")
+        pg.wait_for_load_state("domcontentloaded")
         time.sleep(3)
 
         # ② 登录
@@ -45,7 +45,7 @@ def main():
                 pg.wait_for_url(lambda u: not any(k in u for k in ["login","passport","signin"]), timeout=120000)
                 print("[2] ✅ 登录成功")
                 time.sleep(4)
-                pg.wait_for_load_state("networkidle")
+                pg.wait_for_load_state("domcontentloaded")
             except:
                 print("[2] ❌ 登录超时"); ctx.close(); sys.exit(1)
         else:
@@ -76,7 +76,7 @@ def main():
             clicked = step(pg, 4, "点击数据(模糊)", lambda: pg.locator("text=数据").first.click(timeout=5000))
         if clicked:
             time.sleep(4)
-            pg.wait_for_load_state("networkidle")
+            pg.wait_for_load_state("domcontentloaded")
         else:
             print("[4] ⚠️ 手动点击数据中心，脚本继续监听...")
 
