@@ -1,0 +1,26 @@
+/* 把指定class下的wikilink渲染成按钮 */
+
+.button-grid a.internal-link {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 4px 6px;
+  border-radius: 6px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: background 0.15s;
+}
+
+.button-grid a.internal-link:hover {
+  background: var(--interactive-accent-hover);
+  text-decoration: none;
+}
+
+/* 蓝色变体 */
+.button-grid.blue a.internal-link { background: #3b82f6; color: #fff; }
+/* 绿色变体 */
+.button-grid.green a.internal-link { background: #10b981; color: #fff; }
+/* 紫色变体 */
+.button-grid.purple a.internal-link { background: #8b5cf6; color: #fff; }
